@@ -1,0 +1,15 @@
+import React, { PropTypes } from 'react';
+import { Grid, Row } from 'react-bootstrap';
+
+const AnyLoggedInUserLayout = (props) => (
+  <Grid>
+    <Row>
+      {/* React Router will automatically set the children props to whichever
+        is the appropriate component based on the current route */}
+      {React.cloneElement(props.children, props)}
+    </Row>
+  </Grid>
+);
+
+AnyLoggedInUserLayout.propTypes = {};
+export default AnyLoggedInUserLayout;

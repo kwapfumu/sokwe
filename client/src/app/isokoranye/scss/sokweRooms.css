@@ -1,0 +1,37 @@
+#sokweRooms{
+  margin: 10px;
+}
+
+#new_sokweRoom {
+  font-size: 15px;
+}
+#new_sokweRoom span{
+  padding-right: 15px;
+}
+
+#all_sokweRooms {
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+  font-size: 15px;
+  margin-bottom: 10px;
+  margin-top: 16px;
+  padding: 5px 0;
+}
+
+.room_div {
+  border-bottom: 1px solid #CCCCCC;
+  padding-bottom: 5px;
+  padding-top: 12px;
+}
+
+.room_name {
+  display: inline-block;
+  font-weight: bold;
+  width: 165px;
+}
+
+.room_div a{
+  position: absolute;
+  right: 40px;
+}
+
