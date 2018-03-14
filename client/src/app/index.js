@@ -48,8 +48,6 @@ let sokweRoutes = (
 );
 // pass the Router component with some routes to React DOM render method
 render(
-  <AppContainer>
-    <Provider store={store}>
-      <Router history={createBrowserHistory()}>{sokweRoutes}</Router>
-    </Provider>
-  </AppContainer>, document.getElementById('sokweApp'));
+  <Provider store={store}>
+    <Router history={createBrowserHistory()}>{sokweRoutes}</Router>
+  </Provider>, document.getElementById('sokweApp'));
