@@ -1,0 +1,4 @@
+{
+  "presets": ["react", "env", "stage-1", "transform-object-assign"],
+  "plugins": ["react-hot-loader/babel", "@babel/plugin-transform-react-jsx-source"]
+}
