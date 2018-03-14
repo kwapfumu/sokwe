@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Navbar } from 'react-bootstrap';
 // Component greeting & displaying currentUserName in navbar
 const Greeting = (props) => (

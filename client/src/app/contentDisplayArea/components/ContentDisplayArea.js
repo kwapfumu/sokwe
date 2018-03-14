@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import AnyLoggedInUserLayout from '../../anyLoggedInUser/components/AnyLoggedInUserLayout';
 import AdminLayout from '../../admin/components/AdminLayout/AdminLayout';
 import HomeLayout from '../../home/components/HomeLayout';

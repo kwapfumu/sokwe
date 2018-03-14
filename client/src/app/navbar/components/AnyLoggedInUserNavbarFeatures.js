@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import Greeting from './Greeting';
@@ -23,24 +24,24 @@ const AnyLoggedInUserNavbarFeatures = (props) => {
         </Nav>
       <div>
     );
-  } else {
-    return (
-      <div>
-        <Nav bsStyle="pills" activeKey={props.selectedKey}>
-          <LinkContainer to="/about">
-            <NavItem eventKey={1}>About</NavItem>
-          </LinkContainer>
-          <LinkContainer to="/isokoranye">
-            <NavItem eventKey={2}>Isokoranye</NavItem>
-          </LinkContainer>
-        </Nav>
-        <Greeting currentUserName={props.currentUserName} />
-        <Nav pullRight>
-          <NavItem eventKey={5}>Logout</NavItem>
-        </Nav>
-      </div>
-    );
   }
+
+  return (
+    <div>
+      <Nav bsStyle="pills" activeKey={props.selectedKey}>
+        <LinkContainer to="/about">
+          <NavItem eventKey={1}>About</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/isokoranye">
+          <NavItem eventKey={2}>Isokoranye</NavItem>
+        </LinkContainer>
+      </Nav>
+      <Greeting currentUserName={props.currentUserName} />
+      <Nav pullRight>
+        <NavItem eventKey={5}>Logout</NavItem>
+      </Nav>
+    </div>
+  );
 };
 
 AnyLoggedInUserNavbarFeatures.propTypes = {

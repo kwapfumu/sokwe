@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
 import ErrorBoundary from './reusableComponents/ErrorBoundary/ErrorBoundary';
 import NavbarSokwe from './navbar/components/NavbarSokwe';

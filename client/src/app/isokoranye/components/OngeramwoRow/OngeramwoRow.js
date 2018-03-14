@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Row, Col, Button } from 'react-bootstrap';
 import addIgisokozoActionsCreators from '../../actions/igisokozoActionsCreators/addIgisokozoActionsCreators';
 import { AddIgisokozoFormReactBootstrap } from './AddIgisokozoForm/AddIgisokozoFormReactBootstrap';

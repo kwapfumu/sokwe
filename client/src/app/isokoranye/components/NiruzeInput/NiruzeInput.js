@@ -1,6 +1,6 @@
-"use strict";
-import React, { Component, PropTypes } from 'react';
-import {Row, Col, Well, Button} from 'react-bootstrap';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Row, Col, Well, Button } from 'react-bootstrap';
 import incrementUserScoreActionsCreators from '../../actions/currentUserActionsCreators/incrementUserScoreActionsCreators';
 
 class NiruzeInput extends Component{
@@ -10,15 +10,15 @@ class NiruzeInput extends Component{
 			userNyishu:'',
 			feedbackText:'',
 			isVerifying:false
-		},
+		};
 		//this.handleHinyuzaClick=this.handleHinyuzaClick.bind(this);
-		
-	},
+
+	}
 	//returns inyishu from currently played aSokozo
 	getInyishu(){
 		let aNyishu = this.props.getState().aSokozo.inyishu;
 		return aNyishu;
-	},
+	}
 	//if true inc userscore else reset usernyishu to empty string
 	hinyuza(akaNyishu){
 		let nyish = this.getInyishu();
@@ -30,21 +30,24 @@ class NiruzeInput extends Component{
 			this.setState({feedBackText:'ituuuye!'});
 			this.setState({userNyishu:''});
 		};
-	},
+	}
+
 	handleChange(e){
 		e.preventDefault();
 		this.setState({userNyishu: e.target.value});
-	},
+	}
+
 	handleHinyuzaClick(e){
 		e.preventDefault();
-		this.setState({isVerifying:true});		
+		this.setState({isVerifying:true});
 		this.hinyuza(this.state.userNyishu);
 		this.setState({isVerifying:false});
-	},
+	}
 	handleNdaguhayeClick(e){
 		e.preventDefault();
 		this.props.showInyishu();
-	},
+	}
+  
 	render(){
 		return(
 			{/*niruze_inputRow*/}
@@ -56,10 +59,10 @@ class NiruzeInput extends Component{
 								  onChange={this.handleChange.bind(this)}></p>
                     </Row>
 					{/*FeedbackRow*/}
-                    <Row>	
+                    <Row>
 						<Well>{this.state.feedbackText}</Well>
 				    </Row>
-                   {/* /FeedbackRow*/}					
+                   {/* /FeedbackRow*/}
 					{/*hinyuzarowButtons*/ }
                     <Row id="hinyuzaButtonRow" style="padding-top:10px;" className="niruzeButtons">
 						<Col mdOffset={2} md={1}>
@@ -76,7 +79,7 @@ class NiruzeInput extends Component{
 							</p>
 						</Col>
 					</Row>
-                     {/* /hinyuzarowButtons*/ }                                      
+                     {/* /hinyuzarowButtons*/ }
                 </Col>
             </Row>
 			{/* /niruze_inputRow*/}

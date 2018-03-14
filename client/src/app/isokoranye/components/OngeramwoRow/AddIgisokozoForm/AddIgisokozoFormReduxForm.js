@@ -1,4 +1,3 @@
-"use strict";
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
@@ -18,29 +17,29 @@ const renderField = ({ input, label, type, meta: { touched, error, warning } }) 
 	</div>
 );
 
-const AddIgisokozoFormReduxForm = (props) => {	    
+const AddIgisokozoFormReduxForm = (props) => {
     return (
 		<form id="addIgisokozoForm" onSubmit={props.handleSubmit}>
-			<div className="Row">          
+			<div className="Row">
 				<p><Field name="igisokozo" id="igisokozo" className="isokoranyeGrayTheme"
 					   type="text"
-					   component={renderField} 
+					   component={renderField}
 					   label="igisokozo"
 					   validate={[ required, minLength5, maxLength15 ]}/>
 			    <Field name="inyishu" id="inyishu" className="col-sm-offset-1 isokoranyeGrayTheme"
 				       type="text"
-					   component={renderField}  
+					   component={renderField}
 					   label="inyishu"
 					   validate={[ required, minLength5, maxLength15 ]}/></p>
 			</div>
 			{/*ongeramwoButtonRow*/}
-			<div className="Row" id="ongeramwoButton" style="padding-top:10px;">			
-				<p><button type="submit" 
-				           disabled={props.submitting} 
-						   id="ongeramwoButton" 
+			<div className="Row" id="ongeramwoButton" style="padding-top:10px;">
+				<p><button type="submit"
+				           disabled={props.submitting}
+						   id="ongeramwoButton"
 						   className="col-md-offset-4 col-md-1">Ongeramwo</button></p>
 			</div>
-		</form>		
+		</form>
     );
  };
 

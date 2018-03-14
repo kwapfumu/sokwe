@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Row, Col } from 'react-bootstrap';
 import Sokoranya from '../Sokoranya/Sokoranya';
 import StatsNuserScore from '../StatsNuserScore/StatsNuserScore';
@@ -46,11 +47,11 @@ class IsokoranyeLayout extends Component {
 }
 
 IsokoranyeLayout.propTypes = {
-  aSokozo:PropTypes.object.isRequired,
-  currentUser:PropTypes.object.isRequired,
-  dispatch:PropTypes.func.isRequired,
+  aSokozo: PropTypes.object.isRequired,
+  currentUser: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired,
   ibisokozo: PropTypes.object.isRequired,
-  thisGameScore:PropTypes.number.isRequired,
+  thisGameScore: PropTypes.number.isRequired,
 };
 
 export default IsokoranyeLayout;

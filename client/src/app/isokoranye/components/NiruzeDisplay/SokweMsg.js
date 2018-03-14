@@ -1,18 +1,18 @@
-"use strict";
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const SokweMsg = (props) => {
-	if(this.props.showSokweMsg){
-		return (
-			<p>{this.props.sokweMsg}</p>
-		);
-	}else{
-		return null;
-	};
-};		
+  if (props.showSokweMsg) {
+    return (
+      <p>{props.sokweMsg}</p>
+    );
+  }
 
-SokweMsg.propTypes={
-	showSokweMsg:PropTypes.bool.isRequired,
-	sokweMsg:PropTypes.string.isRequired,
+  return null;
+};
+
+SokweMsg.propTypes = {
+  showSokweMsg: PropTypes.bool.isRequired,
+  sokweMsg: PropTypes.string.isRequired,
 };
 export default SokweMsg;
