@@ -46,10 +46,11 @@ class NavbarSokwe extends Component {
 	}
 
 	function NavbarFeatures2Render(props) {
-		if(this.props.isLoggedIn === true && this.props.isAdmin === true){
-			// when loggedIn as Admin
+		if(this.props.isLoggedIn === true){
+			// when loggedIn
 			return (
 				<AnyLoggedInUserNavbarFeatures
+          isAdmin={this.props.isAdmin}
           showAdminFeatures={this.props.showAdminFeatures}
           currentUserName={this.props.getState().currentUser.username}
           selectedKey={this.state.selectedKey} />

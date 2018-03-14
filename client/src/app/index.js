@@ -1,7 +1,7 @@
 // Do this once before any other code in your app
 import 'babel-polyfill';
 import { render } from 'react-dom';
-import { Router, Route, IndexRoute } from 'react-router';
+import { Router, Route, IndexRoute } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import createBrowserHistory from 'history/createBrowserHistory';
 import SokweAppContainer from './SokweAppContainer';

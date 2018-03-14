@@ -6,7 +6,7 @@ import Greeting from './Greeting';
 import AdminNavbarFeatures from './AdminNavbarFeatures';
 
 const AnyLoggedInUserNavbarFeatures = (props) => {
-  if(props.showAdminFeatures) {
+  if (props.isAdmin === true && props.showAdminFeatures === true) {
     return (
       <div>
         <Nav bsStyle="pills" activeKey={props.selectedKey}>
@@ -26,6 +26,7 @@ const AnyLoggedInUserNavbarFeatures = (props) => {
     );
   }
 
+  // logged in as regular user
   return (
     <div>
       <Nav bsStyle="pills" activeKey={props.selectedKey}>
@@ -45,6 +46,7 @@ const AnyLoggedInUserNavbarFeatures = (props) => {
 };
 
 AnyLoggedInUserNavbarFeatures.propTypes = {
+  isAdmin: PropTypes.bool.isRequired,
   currentUserName: PropTypes.string.isRequired,
   showAdminFeatures: PropTypes.bool.isRequired,
   selectedKey: PropTypes.number.isRequired,

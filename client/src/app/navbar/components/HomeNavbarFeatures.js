@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-
+/* rendered inside NavbarSokwe when no one is logged in
+* renders : About   fcbLogo and login link */
 const HomeNavbarFeatures = (props) => (
   <div id="homeNavbar">
     <Nav bsStyle="pills" activeKey={props.selectedKey}>

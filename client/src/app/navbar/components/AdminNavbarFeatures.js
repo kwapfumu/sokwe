@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 
-export default function AdminNavbarFeatures (props) {
+const AdminNavbarFeatures = function AdminNavbarFeatures (props) {
   return (
     <div>
       <LinkContainer to="/ibisokozo">
@@ -16,3 +16,5 @@ export default function AdminNavbarFeatures (props) {
     <div>
   );
 };
+
+export default AdminNavbarFeatures;
