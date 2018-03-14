@@ -41,7 +41,7 @@ const webpackConfigDev = function webpackConfigDev(env) {
       // inline: true,
       noInfo: false,
       open: 'Chrome',
-      openPage: '/home',
+      openPage: 'about',
       /* With a backend on localhost:3000 , you can use this to enable proxying
       * // proxy:{"/api": "http://127.0.0.1:3000"},
       * A request to /api/users will now proxy the request to http://localhost:3000/api/users */
