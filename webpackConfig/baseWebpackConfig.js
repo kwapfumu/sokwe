@@ -10,6 +10,7 @@ const baseWebpackConfig = function baseWebpackConfig() {
     ],
     output: {
       path: path.join(__dirname, 'client/dist/public'),
+      publicPath: '/',
       filename: '[name].bundle.js',
       sourceMapFilename: '[name].map',
     },

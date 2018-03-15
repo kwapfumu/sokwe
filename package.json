@@ -7,11 +7,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --env dev --progress --colors --watch && nodemon --exec babel-node -- server/server",
+    "start": "webpack-dev-server --env dev --progress --colors --watch && nodemon --watch webpack.config.js --exec babel-node -- server/server",
+    "server": "nodemon --watch webpack.config.js --exec babel-node -- server/server",
     "test": "jest --coverage",
-    "test:watch": "npm test -- --watch",
-    "build:dev": "webpack --env=webpack.config.dev --progress --profile --colors",
-    "build:dist": "webpack --env=webpack.config.prod --progress --profile --colors"
+    "test:watch": "yarn test -- --watch",
+    "build": "webpack --env=webpack.config.prod --progress --profile --colors"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
@@ -111,6 +111,7 @@
     "uglifyjs-webpack-plugin": "^1.2.2",
     "url-loader": "*",
     "webpack-cli": "^2.0.10",
+    "webpack-dev-middleware": "^3.0.1",
     "webpack-dev-server": "^3.1.0",
     "webpack-merge": "^4.1.1"
   }

@@ -18,8 +18,8 @@ import LoginForm from './loginNsignup/components/LoginForm/LoginForm';
 import UrlNotFound from './reusableComponents/UrlNotFound/UrlNotFound';
 /** This is where it all starts. This main application file includes the React
 * Router,primary views, and the router configuration. */
-let sokweRoutes = (
-  <Route path="/" component={SokweAppContainer}>
+const sokweRoutes = (
+  <Route exact path="/" component={SokweAppContainer}>
     <IndexRoute component={HomeLayout} />
     {/* admin routes */}
     <Route path="admin" component={AdminLayout}>
