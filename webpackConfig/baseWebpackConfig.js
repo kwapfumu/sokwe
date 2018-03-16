@@ -30,7 +30,7 @@ const baseWebpackConfig = function baseWebpackConfig() {
             // files to apply this loader to
             path.join(__dirname, '/client/src/app'),
           ],
-          exclude: /(node_modules|bower_components)/,
+          exclude: /node_modules/,
           // loaders process from right to left
           loaders: ['react-hot-loader/babel', 'babel-loader', 'eslint-loader'],
         },

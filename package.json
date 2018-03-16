@@ -8,10 +8,11 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --env dev --progress --colors --watch && nodemon --watch webpack.config.js --exec babel-node -- server/server",
+    "client": "webpack-dev-server --env dev --progress --colors --watch",
     "server": "nodemon --watch webpack.config.js --exec babel-node -- server/server",
     "test": "jest --coverage",
     "test:watch": "yarn test -- --watch",
-    "build": "webpack --env=webpack.config.prod --progress --profile --colors"
+    "build": "webpack --env prod --progress --profile --colors"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
@@ -76,7 +77,9 @@
     "webpack": "^4.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.41",
     "@babel/plugin-transform-react-jsx-source": "^7.0.0-beta.40",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-jest": "^22.4.1",
