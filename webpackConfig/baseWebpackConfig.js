@@ -44,13 +44,20 @@ const baseWebpackConfig = function baseWebpackConfig() {
             {
               loader: "css-loader",
               options: {
-                modules: true,
-                camelCase: true,
+                // modules: true,
+                // camelCase: true,
+                sourceMap: true,
+                importLoaders: 1,
+              },
+            },
+            { loader: "resolve-url-loader" },
+            // compiles Sass to css
+            {
+              loader: "sass-loader",
+              options: {
                 sourceMap: true,
               },
             },
-            // compiles Sass to css
-            { loader: "sass-loader" },
           ],
         },
         {
