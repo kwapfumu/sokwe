@@ -35,32 +35,6 @@ const baseWebpackConfig = function baseWebpackConfig() {
           loaders: ['react-hot-loader/babel', 'babel-loader', 'eslint-loader'],
         },
         {
-          test: /\.scss$/,
-          // chain the the folowing loader to immediately apply all styles to the DOM
-          use: [
-            // creates styles nodes from js strings
-            { loader: "style-loader" },
-            // translates css into CommonJs
-            {
-              loader: "css-loader",
-              options: {
-                // modules: true,
-                // camelCase: true,
-                sourceMap: true,
-                importLoaders: 1,
-              },
-            },
-            { loader: "resolve-url-loader" },
-            // compiles Sass to css
-            {
-              loader: "sass-loader",
-              options: {
-                sourceMap: true,
-              },
-            },
-          ],
-        },
-        {
           test: /\.(png|jpg)$/,
           use: [
             // inline base64 URLs for <=8k images, use direct URLs for the rest
@@ -72,6 +46,7 @@ const baseWebpackConfig = function baseWebpackConfig() {
         },
       ],
     },
+
     optimization: {
       splitChunks: {
         chunks: "initial",

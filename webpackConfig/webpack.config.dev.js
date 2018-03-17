@@ -4,6 +4,7 @@ const webpackMerge = require('webpack-merge');
 const commonWebpackConfig = require('./baseWebpackConfig');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
+const loadSCSS = require('./parts/loadSCSS');
 const devServerOptions = require('./parts/devServerOptions');
 
 const webpackConfigDev = function webpackConfigDev(env) {
@@ -35,7 +36,7 @@ const webpackConfigDev = function webpackConfigDev(env) {
     stats: {
       colors: true,
     },
-  }, devServerOptions.devServer);
+  }, loadSCSS, devServerOptions.devServer);
 };
 
 module.exports = webpackConfigDev;
