@@ -13,8 +13,8 @@ const loadSCSS = ({ include, exclude } = {}) => ({
           {
             loader: "css-loader",
             options: {
-              // modules: true,
-              // camelCase: true,
+              modules: true,
+              camelCase: true,
               sourceMap: true,
               importLoaders: 1,
             },
@@ -33,4 +33,4 @@ const loadSCSS = ({ include, exclude } = {}) => ({
   },
 });
 
-module.exports = loadSCSS ;
+module.exports = loadSCSS;
