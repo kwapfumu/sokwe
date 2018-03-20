@@ -34,28 +34,18 @@ const baseWebpackConfig = function baseWebpackConfig() {
           // loaders process from right to left
           loaders: ['react-hot-loader/babel', 'babel-loader', 'eslint-loader'],
         },
-        {
-          test: /\.(png|jpg)$/,
-          use: [
-            // inline base64 URLs for <=8k images, use direct URLs for the rest
-            {
-              loader: 'url-loader',
-              options: { limit: 8192 },
-            },
-          ],
-        },
       ],
     },
-    /* optimization: {
+    optimization: {
       runtimeChunk: 'single',
-      // splitChunks: {
-        // chunks: "all",
+      splitChunks: {
+        // chunks: "initial",
         // minSize: 30000,
         // minChunks: 1,
         // maxAsyncRequests: 5,
         // maxInitialRequests: 3,
         // name: true,
-        /* cacheGroups: {
+        cacheGroups: {
           commons: {
             chunks: "initial",
             minChunks: 2,
@@ -68,12 +58,12 @@ const baseWebpackConfig = function baseWebpackConfig() {
             test: /[\\/]node_modules[\\/]/,
             chunks: "initial",
             name: "vendor",
-            priority: -10,
+            // priority: -10,
             enforce: true,
           },
-        }, */
-      // },
-    // },
+        },
+      },
+    },
     plugins: [
       new HtmlPlugin({
         title: 'Sokwe',

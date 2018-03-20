@@ -47,7 +47,7 @@
     "prop-types": "^15.6.1",
     "quill": "*",
     "react": "^16.2.0",
-    "react-addons-css-transition-group": "*",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-addons-update": "*",
     "react-bootstrap": "*",
     "react-delay-render": "^0.1.2",
@@ -74,7 +74,7 @@
     "semantic-ui-react": "^0.78.3",
     "serve-favicon": "*",
     "socket.io": "*",
-    "webpack": "^4.1.0"
+    "webpack": "^4.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.41",
@@ -107,15 +107,15 @@
     "node-sass": "*",
     "nodemon": "^1.17.1",
     "postcss-loader": "*",
-    "react-addons-test-utils": "*",
+    "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "*",
     "sass-loader": "*",
     "style-loader": "^0.20.2",
     "uglifyjs-webpack-plugin": "^1.2.2",
     "url-loader": "*",
-    "webpack-cli": "^2.0.10",
+    "webpack-cli": "^2.0.12",
     "webpack-dev-middleware": "^3.0.1",
-    "webpack-dev-server": "^3.1.0",
-    "webpack-merge": "^4.1.1"
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
   }
 }
