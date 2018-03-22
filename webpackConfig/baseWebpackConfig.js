@@ -2,14 +2,15 @@
 const path = require('path');
 const HtmlWebpackCdnPlugin = require('html-webpack-cdn-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
-const cdnConfig = {
-  host: "https://cdnjs.cloudflare.com/ajax/libs",
-  cdn: {
-    js: "https://cdnjs.cloudflare.com/ajax/libs",
-    css: "https://cdnjs.cloudflare.com/ajax/libs",
-  },
-};
+// const cdnConfig = {
+// host: "https://maxcdn.bootstrapcdn.com",
+// cdn: {
+// js: "https://cdnjs.cloudflare.com/ajax/libs",
+// css: "https://cdnjs.cloudflare.com/ajax/libs",
+// },
+// };
 
 const baseWebpackConfig = function baseWebpackConfig() {
   return {
@@ -74,7 +75,7 @@ const baseWebpackConfig = function baseWebpackConfig() {
     // },
     // },
     plugins: [
-      new HtmlWebpackCdnPlugin(cdnConfig),
+      // new HtmlWebpackCdnPlugin(cdnConfig),
       new HtmlPlugin({
         title: 'Sokwe',
         filename: 'index.html',
@@ -82,7 +83,11 @@ const baseWebpackConfig = function baseWebpackConfig() {
         // favicon:'../client/dist/public/assets/favicon.ico',
         inject: 'head',
         chunksSortMode: 'dependency',
+        alwaysWriteToDisk: true,
       }),
+      // new HtmlWebpackHarddiskPlugin({
+      // outputPath: path.join(__dirname, 'client/dist/public'),
+      // }),
     ],
   };
 };
