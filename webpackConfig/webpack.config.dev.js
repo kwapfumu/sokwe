@@ -5,7 +5,7 @@ const commonWebpackConfig = require('./baseWebpackConfig');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 const generateSourceMaps = require('./parts/generateSourceMaps');
-// const devServerOptions = require('./parts/devServerOptions');
+const devServerOptions = require('./parts/devServerOptions');
 const loadSCSS = require('./parts/loadSCSS');
 const loadImages = require('./parts/loadImages');
 
@@ -41,6 +41,7 @@ const webpackConfigDev = function webpackConfigDev(env) {
       },
     },
     generateSourceMaps({ type: 'eval-source-map' }),
+    devServerOptions.devServer,
     loadSCSS,
     loadImages,
     {

@@ -5,7 +5,7 @@ const extractCSS = ({ include, exclude, use }) => {
   const XtractTxtPlugin = new ExtractTextPlugin({
     // `allChunks` is needed to extract from extracted chunks as well.
     allChunks: true,
-    filename: 'client/dist/public/css/sokweStyles.css',
+    filename: 'client/dist/public/css/sokweStyles.[contenthash:4].css',
   });
 
   return {
