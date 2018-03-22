@@ -20,7 +20,7 @@ const webpackConfigProd = function webpackConfigProd(env) {
         chunkFilename: "[name].[chunkhash:4].js",
         filename: "[name].[chunkhash:4].js",
         sourceMapFilename: '[name].map',
-        publicPath: '/',
+        publicPath: '/', // Tweak this to match your project name/url
       },
     },
     generateSourceMaps({ type: 'source-map' }),
