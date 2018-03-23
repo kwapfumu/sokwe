@@ -5,6 +5,7 @@ const devServerOptions = ({ host, port } = {}) => ({
     host, // Defaults to `localhost`
     port, // Defaults to 8080
     hot: true,
+    hotOnly: true,
     historyApiFallback: true,
     // inline: true,
     noInfo: false,
@@ -18,8 +19,8 @@ const devServerOptions = ({ host, port } = {}) => ({
     * // proxy:{"/api": "http://127.0.0.1:3000"},
     * A request to /api/users will now proxy the request to http://localhost:3000/api/users */
     stats: 'minimal',
-    publicPath: path.join(__dirname, '/client/dist/public/'),
-    contentBase: path.join(__dirname, 'client/dist/public'),
+    publicPath: path.join(__dirname, '../../client/dist/public/'),
+    contentBase: path.join(__dirname, '../../client/dist/public/'),
     watchContentBase: true,
   },
 });

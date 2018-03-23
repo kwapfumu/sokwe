@@ -2,13 +2,12 @@
 const path = require('path');
 const HtmlWebpackCdnPlugin = require('html-webpack-cdn-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+// const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 // const cdnConfig = {
 // host: "https://maxcdn.bootstrapcdn.com",
 // cdn: {
-// js: "https://cdnjs.cloudflare.com/ajax/libs",
-// css: "https://cdnjs.cloudflare.com/ajax/libs",
+// css: "https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css",
 // },
 // };
 
@@ -19,7 +18,7 @@ const baseWebpackConfig = function baseWebpackConfig() {
       './client/src/app/index.js',
     ],
     output: {
-      path: path.join(__dirname, 'client/dist/public'),
+      path: path.join(__dirname, '../client/dist/public'),
       filename: '[name].bundle.js',
       sourceMapFilename: '[name].map',
       publicPath: '/',
@@ -38,55 +37,26 @@ const baseWebpackConfig = function baseWebpackConfig() {
           test: /\.(js)$/,
           include: [
             // files to apply this loader to
-            path.join(__dirname, '/client/src/app'),
+            path.join(__dirname, '../client/src/app'),
           ],
           exclude: /node_modules/,
           // loaders process from right to left
-          loaders: ['react-hot-loader/babel', 'babel-loader', 'eslint-loader'],
+          loaders: ['babel-loader', 'eslint-loader'],
         },
       ],
     },
-    // optimization: {
-    // runtimeChunk: 'single',
-    // splitChunks: {
-    // chunks: "initial",
-    // minSize: 30000,
-    // minChunks: 1,
-    // maxAsyncRequests: 5,
-    // maxInitialRequests: 3,
-    // name: true,
-    // cacheGroups: {
-    // commons: {
-    // chunks: "initial",
-    // minChunks: 2,
-    // priority: -20,
-    // reuseExistingChunk: true,
-    // },
-    // Create a `vendors` chunk, which includes all code from node_modules in the
-    // whole application.
-    // vendor: {
-    // test: /[\\/]node_modules[\\/]/,
-    // chunks: "initial",
-    // name: "vendor",
-    // priority: -10,
-    // enforce: true,
-    // },
-    // },
-    // },
-    // },
     plugins: [
-      // new HtmlWebpackCdnPlugin(cdnConfig),
       new HtmlPlugin({
         title: 'Sokwe',
         filename: 'index.html',
         template: '../sokwe/client/src/app/index.html',
-        // favicon:'../client/dist/public/assets/favicon.ico',
         inject: 'head',
         chunksSortMode: 'dependency',
-        alwaysWriteToDisk: true,
+        // alwaysWriteToDisk: true,
       }),
+      // new HtmlWebpackCdnPlugin(cdnConfig),
       // new HtmlWebpackHarddiskPlugin({
-      // outputPath: path.join(__dirname, 'client/dist/public'),
+      // outputPath: path.join(__dirname, '../client/dist/public'),
       // }),
     ],
   };

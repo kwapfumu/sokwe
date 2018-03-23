@@ -16,17 +16,17 @@ const webpackConfigDev = function webpackConfigDev(env) {
       mode: 'development',
       entry: [
         // WebpackDevServer host and port, enables the client portion of dev server
-        'webpack-dev-server/client?http://localhost:8080',
+        'webpack-dev-server/client?http://localhost:3000',
         // provides an avenue for our react-hot loader to push updated React components
         // to our application without a refresh, "only" prevents reload on syntax errors
-        'webpack/hot/only-dev-server'
+        // 'webpack/hot/only-dev-server'
       ],
       plugins: [
         new CleanWebpackPlugin([
-          'client/dist/public/*.js',
-          'client/dist/public/*.html',
-          'client/dist/public/css/*.*',
-        ], { root: path.join(__dirname, 'webpack.config'), verbose: true, dry: true }),
+          '../../client/dist/public/*.js',
+          '../../client/dist/public/*.html',
+          '../../client/dist/public/css/*.*',
+        ], { root: path.join(__dirname, 'webpack.config'), verbose: true, dry: false }),
         // makes it easier to see which dependencies are being patched
         new webpack.NamedModulesPlugin(),
         // allows the server to push changed JS modules into the browser execution
@@ -41,9 +41,9 @@ const webpackConfigDev = function webpackConfigDev(env) {
       },
     },
     generateSourceMaps({ type: 'eval-source-map' }),
-    devServerOptions.devServer,
-    loadSCSS,
-    loadImages,
+    devServerOptions({ host: 'localhost', port: 3000 }),
+    loadSCSS(),
+    loadImages(),
     {
       optimization: {
         runtimeChunk: 'single',
