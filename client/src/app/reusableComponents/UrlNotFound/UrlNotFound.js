@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const UrlNotFound = () => (
   <p>
@@ -7,5 +7,5 @@ const UrlNotFound = () => (
   </p>
 );
 
-UrlNotFound.propTypes = {};
+// UrlNotFound.propTypes = {};
 export default UrlNotFound;

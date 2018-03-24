@@ -20,6 +20,7 @@ const webpackConfigDev = function webpackConfigDev(env) {
         // provides an avenue for our react-hot loader to push updated React components
         // to our application without a refresh, "only" prevents reload on syntax errors
         // 'webpack/hot/only-dev-server'
+        'react-hot-loader/patch'
       ],
       plugins: [
         new CleanWebpackPlugin([

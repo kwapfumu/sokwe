@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import { adminFeaturesReducer } from './admin/reducers/adminFeaturesReducers/adminFeaturesReducer';
-import { fetchUsersReducer } from './admin/reducers/fetchUsersReducers/fetchUsersReducer';
+// import { adminFeaturesReducer } from
+// './admin/reducers/adminFeaturesReducers/adminFeaturesReducer';
+// import { fetchUsersReducer } from './admin/reducers/fetchUsersReducers/fetchUsersReducer';
 
 
 /* First and foremost, it's important to understand that your entire application really only has one
