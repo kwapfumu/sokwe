@@ -1,3 +1,4 @@
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import SokweAppLayout from './SokweAppLayout';
 
@@ -11,6 +12,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {};
 };
 
-const SokweAppContainer = connect(mapStateToProps, mapDispatchToProps)(SokweAppLayout);
+const SokweAppContainer = withRouter(connect(mapStateToProps, mapDispatchToProps)(SokweAppLayout));
 
 export default SokweAppContainer;

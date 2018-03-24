@@ -1,11 +1,11 @@
 
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
-const AboutLayout = (props) => (
+const AboutLayout = () => (
   <p> This is about page</p>
 );
 
-AboutLayout.propTypes = {};
+// AboutLayout.propTypes = {};
 
 export default AboutLayout;

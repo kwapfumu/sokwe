@@ -38,11 +38,10 @@ class ContentDisplayArea extends Component {
           closeAdminTaskFormModal={this.closeTaskForm}
         />
       );
-    } else {
-      return (
-        <HomeLayout />
-      );
     }
+    return (
+      <HomeLayout />
+    );
   }
 }
 

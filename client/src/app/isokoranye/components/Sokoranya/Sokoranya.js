@@ -24,7 +24,7 @@ class Sokoranya extends Component {
 
 	render() {
     return (
-      {/*sokoranya row*/}
+      {/* sokoranya row */}
       <Row className="akogusokoranya">
 				<NiruzeDisplay
           aSokozo={this.props.aSokozo}

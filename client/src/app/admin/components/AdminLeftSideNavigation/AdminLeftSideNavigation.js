@@ -4,7 +4,11 @@ import { Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 class AdminLeftSideNavigation extends Component {
-  handleSelect(e,eventKey) {
+  constructor(props){
+    super(props);
+  }
+
+  handleSelect(e, eventKey) {
     e.preventdefault();
   }
 

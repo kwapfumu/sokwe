@@ -7,12 +7,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --env dev --progress --colors --watch && nodemon --watch webpack.config.js --exec babel-node -- server/server",
-    "client": "webpack-dev-server --env dev --progress --colors --watch",
+    "start": "webpack-dev-server --env development --progress --colors --watch && nodemon --watch webpack.config.js --exec babel-node -- server/server",
+    "client": "webpack-dev-server --env development --progress --colors --watch",
     "server": "nodemon --watch webpack.config.js --exec babel-node -- server/server",
     "test": "jest --coverage",
     "test:watch": "yarn test -- --watch",
-    "build": "webpack --env prod --progress --profile --colors"
+    "build": "webpack --env production --progress --profile --colors"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",

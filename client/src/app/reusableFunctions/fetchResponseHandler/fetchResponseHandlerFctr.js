@@ -16,7 +16,7 @@ const fetchResponseHandlerFctr = function fetchResponseHandlerFctr() {
       }
 
       if (typeof response.statusText === "string") {
-        let error = new Error(response.statusText);
+        const error = new Error(response.statusText);
         error.response = response;
         throw error;
       }
