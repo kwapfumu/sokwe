@@ -3,7 +3,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 const AboutLayout = () => (
-  <p> This is about page</p>
+  <h1> This is about page</h1>
 );
 
 // AboutLayout.propTypes = {};

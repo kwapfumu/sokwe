@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 
-const AdminNavbarFeatures = function AdminNavbarFeatures (props) {
+const AdminNavbarFeatures = () => {
   return (
     <div>
       <LinkContainer to="/ibisokozo">
@@ -13,7 +13,7 @@ const AdminNavbarFeatures = function AdminNavbarFeatures (props) {
       <LinkContainer to="/users">
         <NavItem eventKey={4}>Users</NavItem>
       </LinkContainer>
-    <div>
+    </div>
   );
 };
 

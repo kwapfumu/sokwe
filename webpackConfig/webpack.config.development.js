@@ -8,6 +8,7 @@ const generateSourceMaps = require('./parts/generateSourceMaps');
 const devServerOptions = require('./parts/devServerOptions');
 const loadSCSS = require('./parts/loadSCSS');
 const loadImages = require('./parts/loadImages');
+const loadVideos = require('./parts/loadVideos');
 
 const webpackConfigDev = function webpackConfigDev(env) {
   return webpackMerge(
@@ -45,6 +46,7 @@ const webpackConfigDev = function webpackConfigDev(env) {
     devServerOptions({ host: 'localhost', port: 3000 }),
     loadSCSS(),
     loadImages(),
+    loadVideos({ options: { limit: 10000, mimetype: "video/mp4" } }),
     {
       optimization: {
         runtimeChunk: 'single',

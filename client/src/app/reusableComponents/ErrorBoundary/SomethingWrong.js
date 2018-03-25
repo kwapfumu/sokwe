@@ -1,15 +1,18 @@
 import React, { PropTypes } from 'react';
 
-const SomethingWrong = () => (
+const SomethingWrong = (props) => (
   <div>
     <h1>Something went wrong!</h1>
     <details style={{ whiteSpace: 'pre-wrap' }}>
-      {this.state.error && this.state.error.toString()}
+      {props.error && props.error.toString()}
       <br />
-      {this.state.errorInfo.componentStack}
+      {props.errorInfo.componentStack}
     </details>
   </div>
 );
 
-SomethingWrong.propTypes = {};
+SomethingWrong.propTypes = {
+  error: PropTypes.string.isRequired,
+  errorInfo: PropTypes.object.isRequired,
+};
 export default SomethingWrong;

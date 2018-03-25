@@ -19,7 +19,7 @@ const baseWebpackConfig = function baseWebpackConfig() {
     ],
     output: {
       path: path.join(__dirname, '../client/dist/public'),
-      filename: '[name].bundle.js',
+      filename: 'bundle.[hash].js',
       sourceMapFilename: '[name].map',
       publicPath: '/',
     },
@@ -50,7 +50,6 @@ const baseWebpackConfig = function baseWebpackConfig() {
         title: 'Sokwe',
         filename: 'index.html',
         template: '../sokwe/client/src/app/index.html',
-        inject: 'head',
         chunksSortMode: 'dependency',
         // alwaysWriteToDisk: true,
       }),

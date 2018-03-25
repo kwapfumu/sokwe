@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import fcbkLogo from '../../../assets/imgs/socialMediaLogos/FB-f-Logo__blue_29.png';
 /* rendered inside NavbarSokwe when no one is logged in
 * renders : About   fcbLogo and login link */
 const HomeNavbarFeatures = (props) => (
@@ -13,7 +14,7 @@ const HomeNavbarFeatures = (props) => (
     </Nav>
     <Nav pullRight>
       <NavItem eventKey={3} href="https://www.facebook.com/Sokwe">
-        <img src="../../../assets/imgs/socialMediaLogos/FB-f-Logo__blue_29.png" alt="fcbk logo" />
+        <img src={fcbkLogo} alt="fcbk logo" />
       </NavItem>
       <LinkContainer to="/login">
         <NavItem eventKey={4}>Login</NavItem>

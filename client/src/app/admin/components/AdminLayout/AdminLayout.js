@@ -1,27 +1,21 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+// import PropTypes from 'prop-types';
 import { Grid, Row, Col } from 'react-bootstrap';
 import AdminLeftSideNavigation from '../AdminLeftSideNavigation/AdminLeftSideNavigation';
 import AdminCentralView from '../AdminCentralView/AdminCentralView';
 
-class AdminLayout extends Component {
-  constructor(props) {
-    super(props);
-  }
+const AdminLayout = () => {
+  return (
+    <Grid>
+      <Row>
+        <Col xs={3} sm={3} md={3} lg={3} className="adminLeftSideNavigation">
+          <AdminLeftSideNavigation />
+        </Col>
+        <AdminCentralView />
+      </Row>
+    </Grid>
+  );
+};
 
-  render() {
-    return (
-      <Grid>
-        <Row>
-          <Col xs={3} sm={3} md={3} lg={3} className="adminLeftSideNavigation">
-            <AdminLeftSideNavigation />
-          </Col>
-          <AdminCentralView />
-        </Row>
-      </Grid>
-    );
-  }
-}
-
-AdminLayout.propTypes = {};
+// AdminLayout.propTypes = {};
 export default AdminLayout;

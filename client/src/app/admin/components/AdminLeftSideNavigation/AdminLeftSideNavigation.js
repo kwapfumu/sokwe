@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 class AdminLeftSideNavigation extends Component {
-  constructor(props){
-    super(props);
-  }
-
-  handleSelect(e, eventKey) {
-    e.preventdefault();
-  }
+  // handleSelect(e, eventKey) {
+  // e.preventdefault();
+  // }
 
   render() {
     return (
@@ -42,5 +38,5 @@ class AdminLeftSideNavigation extends Component {
   }
 }
 
-AdminLeftSideNavigation.propTypes = {};
+// AdminLeftSideNavigation.propTypes = {};
 export default AdminLeftSideNavigation;

@@ -12,5 +12,7 @@ const AnyLoggedInUserLayout = (props) => (
   </Grid>
 );
 
-AnyLoggedInUserLayout.propTypes = {};
+AnyLoggedInUserLayout.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 export default AnyLoggedInUserLayout;

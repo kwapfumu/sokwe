@@ -2,9 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 const UrlNotFound = () => (
-  <p>
-    <h1>URL not Found</h1>
-  </p>
+  <h1>URL not Found</h1>
 );
 
 // UrlNotFound.propTypes = {};

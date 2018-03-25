@@ -19,11 +19,11 @@ class ErrorBoundary extends Component {
     };
   }
 
-  componentDidCatch(error, errorInfo) {
+  componentDidCatch(error, info) {
     // Catch errors in any components below and re-render with error message
     this.setState({
       error: error,
-      errorInfo: errorInfo,
+      errorInfo: info,
       hasError: true,
     });
     // You can also log the error to an error reporting service
@@ -34,7 +34,10 @@ class ErrorBoundary extends Component {
     if (this.state.hasError) {
       // You can render any custom fallback UI
       return (
-        <SomethingWrong />
+        <SomethingWrong
+          error={this.state.error}
+          errorInfo={this.state.errorInfo}
+        />
       );
     }
     // Normally, just render children
@@ -42,5 +45,7 @@ class ErrorBoundary extends Component {
   }
 }
 
-ErrorBoundary.propTypes = {};
+ErrorBoundary.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 export default ErrorBoundary;

@@ -1,11 +1,13 @@
 import React from 'react';
 // import { Router } from 'react-router';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
+import { hot } from 'react-hot-loader';
 import createBrowserHistory from 'history/createBrowserHistory';
 // import SokweAppContainer from '../SokweAppContainer';
-import HomeLayout from '../home/components/HomeLayout';
+import SokweAppLayout from '../SokweAppLayout';
+// import HomeLayout from '../home/components/HomeLayout';
 // import AdminLayout from '../admin/components/AdminLayout/AdminLayout';
-// import AboutLayout from '../about/components/AboutLayout';
+import AboutLayout from '../about/components/AboutLayout';
 // import AnyLoggedInUserLayout from '../anyLoggedInUser/components/AnyLoggedInUserLayout';
 // import IsokoranyeContainer from '../isokoranye/containers/IsokoranyeContainer';
 // import AddIgisokozoForm from
@@ -17,9 +19,9 @@ const SokweRoutes = () => {
   return (
     <Router history={createBrowserHistory()}>
       <Switch>
-        <Route exact path="/" component={HomeLayout} />
-        {/* <Route exact path="/" component={SokweAppContainer}>
-        <IndexRoute component={HomeLayout} /> */}
+        <Route exact path="/" component={SokweAppLayout} />
+        {/* <Route exact path="/" component={SokweAppContainer}> */}
+        {/* <IndexRoute component={HomeLayout} /> */}
         {/* admin routes */}
         {/* <Route path="admin" component={AdminLayout}>
           <Route path="about" component={AboutLayout} />
@@ -34,14 +36,14 @@ const SokweRoutes = () => {
           <Route path="ibisokozo/:sokozoId/delete" component={IbisokozoLayout} />
         </Route> */}
         {/* regularUser routes */}
-        {/* <Route path="/about" component={AboutLayout} />
-       <Route path="/isokoranye" component={AnyLoggedInUserLayout} >
+        <Route path="/about" component={AboutLayout} />
+        {/* <Route path="/isokoranye" component={AnyLoggedInUserLayout} >
       <IndexRoute component={IsokoranyeContainer} />
            <Route path="newSokozo" component={AddIgisokozoForm} />
         </Route> */}
         {/* account */}
-        {/* <Route path="/login" component={LoginForm} />
-        <Route path="/logout" component={HomeLayout} /> */}
+        {/* <Route path="/login" component={LoginForm} /> */}
+        {/* <Route path="/logout" component={HomeLayout} /> */}
         <Route path="/*" component={UrlNotFound} />
         {/* </Route> */}
       </Switch>
@@ -49,4 +51,4 @@ const SokweRoutes = () => {
   );
 };
 
-export default SokweRoutes;
+export default hot(module)(SokweRoutes);

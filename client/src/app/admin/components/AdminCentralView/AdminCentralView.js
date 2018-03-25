@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Col } from 'react-bootstrap';
 
@@ -10,5 +10,7 @@ const AdminCentralView = (props) => (
   </Col>
 );
 
-AdminCentralView.propTypes = {};
+AdminCentralView.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 export default AdminCentralView;

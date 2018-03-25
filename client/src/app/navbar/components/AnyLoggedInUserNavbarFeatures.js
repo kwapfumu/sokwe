@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -22,10 +22,9 @@ const AnyLoggedInUserNavbarFeatures = (props) => {
         <Nav pullRight>
           <NavItem eventKey={5}>Logout</NavItem>
         </Nav>
-      <div>
+      </div>
     );
   }
-
   // logged in as regular user
   return (
     <div>
@@ -51,5 +50,4 @@ AnyLoggedInUserNavbarFeatures.propTypes = {
   showAdminFeatures: PropTypes.bool.isRequired,
   selectedKey: PropTypes.number.isRequired,
 };
-
 export default AnyLoggedInUserNavbarFeatures;

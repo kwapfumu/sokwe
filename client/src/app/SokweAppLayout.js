@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { hot } from 'react-hot-loader';
-import ErrorBoundary from './reusableComponents/ErrorBoundary/ErrorBoundary';
+// import PropTypes from 'prop-types';
+// import ErrorBoundary from './reusableComponents/ErrorBoundary/ErrorBoundary';
 import NavbarSokwe from './navbar/components/NavbarSokwe';
 import ContentDisplayArea from './contentDisplayArea/components/ContentDisplayArea';
 import FooterSokwe from './footer/components/FooterSokwe';
@@ -21,29 +20,29 @@ class SokweAppLayout extends Component {
   render() {
     return (
       <div className="sokweAppContainer">
-        <ErrorBoundary>
-          <NavbarSokwe
-            isAdmin={this.state.isAdmin}
-            isLoggedIn={this.state.isLoggedIn}
-            showAdminFeatures={this.state.showAdminNavbarFeatures}
-          />
-        </ErrorBoundary>
-        <ErrorBoundary>
-          <ContentDisplayArea
-            isAdmin={this.state.isAdmin}
-            isLoggedIn={this.state.isLoggedIn}
-          />
-        </ErrorBoundary>
+        {/* <ErrorBoundary> */}
+        <NavbarSokwe
+          isAdmin={this.state.isAdmin}
+          isLoggedIn={this.state.isLoggedIn}
+          showAdminFeatures={this.state.showAdminNavbarFeatures}
+        />
+        {/* /<ErrorBoundary> */}
+        {/* <ErrorBoundary> */}
+        <ContentDisplayArea
+          isAdmin={this.state.isAdmin}
+          isLoggedIn={this.state.isLoggedIn}
+        />
+        {/* /<ErrorBoundary> */}
         <FooterSokwe />
       </div>
     );
   }
 }
-SokweAppLayout.propTypes = {
-  sokweUsers: PropTypes.shape({
-    username: PropTypes.string,
-    email: PropTypes.string
-  }).isRequired,
-};
+// SokweAppLayout.propTypes = {
+//  sokweUsers: PropTypes.shape({
+//    username: PropTypes.string,
+//    email: PropTypes.string
+//  }).isRequired,
+// };
 
-export default hot(module)(SokweAppLayout);
+export default SokweAppLayout;

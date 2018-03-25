@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
-const FooterSokwe = (props) => (
-	<div>by <a href="">pfumu</a></div>
+const FooterSokwe = () => (
+  <div>by <a href="https://github.com/kwapfumu">pfumu</a></div>
 );
 
-
-FooterSokwe.propTypes = {};
+// FooterSokwe.propTypes = {};
 export default FooterSokwe;
