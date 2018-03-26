@@ -1,9 +1,11 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-const UrlNotFound = () => (
-  <h1>URL not Found</h1>
+const UrlNotFound = ({ location }) => (
+  <h1>{location.pathname} not Found</h1>
 );
 
-// UrlNotFound.propTypes = {};
+UrlNotFound.propTypes = {
+  location: PropTypes.object.isRequired,
+};
 export default UrlNotFound;

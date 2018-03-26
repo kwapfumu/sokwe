@@ -3,9 +3,9 @@ import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AnyLoggedInUserLayout from '../../anyLoggedInUser/components/AnyLoggedInUserLayout';
 import AdminLayout from '../../admin/components/AdminLayout/AdminLayout';
-import HomeLayout from '../../home/components/HomeLayout';
-import AboutLayout from '../../about/components/AboutLayout';
-// import navbarRoutes from '../../navbar/navbarRoutes/navbarRoutes';
+// import HomeLayout from '../../home/components/HomeLayout';
+// import AboutLayout from '../../about/components/AboutLayout';
+import navbarRoutes from '../../navbar/navbarRoutes/navbarRoutes';
 
 
 // renders either HomeLayout or AdminLayout or any loggedin user component
@@ -46,12 +46,11 @@ class ContentDisplayArea extends Component {
     }
     return (
       <div>
-        <HomeLayout />
-        <Route path="/about" component={AboutLayout} />
+        {navbarRoutes.map((route, id) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <Route key={id} path={route.path} exact={route.exact} component={route.main} />
+        ))}
       </div>
-    // { navbarRoutes.map((route, index) => (
-      // <Route key={index} path={route.path} exact={route.exact} component={route.main} />
-    // ))}
     );
   }
 }

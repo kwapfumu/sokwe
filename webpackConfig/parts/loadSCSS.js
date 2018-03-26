@@ -24,6 +24,8 @@ const loadSCSS = ({ include, exclude } = {}) => ({
           {
             loader: "sass-loader",
             options: {
+              modules: true,
+              camelCase: true,
               sourceMap: true,
             },
           },

@@ -15,4 +15,4 @@ const loadVideos = ({ include, exclude, options } = {}) => ({
   },
 });
 
-module.exports = loadImages;
+module.exports = loadVideos;

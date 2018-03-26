@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import EmailFormModal from '../EmailFormModal/EmailFormModal';
 
 class LoginForm extends Component {
@@ -22,11 +22,12 @@ class LoginForm extends Component {
     return (
       <EmailFormModal
         modalTitle="Login"
+        emailFormButtonText="Login"
         showModal={this.state.showModal}
         closeEmailFormModal={this.closeEmailFormModal.bind(this)}
       />
     );
   }
 }
-LoginForm.propTypes = {};
+// LoginForm.propTypes = {};
 export default LoginForm;
