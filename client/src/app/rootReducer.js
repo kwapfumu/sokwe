@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-// import { adminFeaturesReducer } from
-// './admin/reducers/adminFeaturesReducers/adminFeaturesReducer';
+import { adminFeaturesReducer } from './admin/reducers/adminFeaturesReducers/adminFeaturesReducer';
 // import { fetchUsersReducer } from './admin/reducers/fetchUsersReducers/fetchUsersReducer';
 
 
@@ -14,11 +13,10 @@ import { reducer as formReducer } from 'redux-form';
 *   work needs to be done
 * - Assuming actual changes need to occur, it needs to create new objects and arrays with the
 *   updated data and return those
-* -If no changes are needed, it should return the existing state as-is. */
+* - If no changes are needed, it should return the existing state as-is. */
 const rootReducer = combineReducers({
-  /* TODO implement them
-   * adminFeatures: adminFeaturesReducer,
-   * users: fetchUsersReducer, */
+  adminFeatures: adminFeaturesReducer,
+  // users: fetchUsersReducer,
   form: formReducer,
 });
 

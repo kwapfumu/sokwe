@@ -1,7 +1,8 @@
 import HomeLayout from '../../home/components/HomeLayout';
 import AboutLayout from '../../about/components/AboutLayout';
 // import LoginForm from '../../loginNsignup/components/LoginForm/LoginForm';
-import UrlNotFound from '../../reusableComponents/UrlNotFound/UrlNotFound';
+import AdminLayout from '../../admin/components/AdminLayout/AdminLayout';
+// import UrlNotFound from '../../reusableComponents/UrlNotFound/UrlNotFound';
 
 const navbarRoutes = [
   {
@@ -17,9 +18,14 @@ const navbarRoutes = [
     main: AboutLayout,
   },
   {
-    id: "notFound",
-    main: UrlNotFound,
+    id: "third",
+    path: "/admin",
+    main: AdminLayout,
   },
+  // {
+  //   id: "notFound",
+  //  main: UrlNotFound,
+  // },
 ];
 
 export default navbarRoutes;

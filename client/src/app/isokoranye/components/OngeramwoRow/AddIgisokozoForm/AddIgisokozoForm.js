@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { ongeramwoButton } from '../../../scss/ongeramwo.scss';
 
 const required = function required(value) {
   return value ? undefined : 'Required';
@@ -54,7 +55,8 @@ const AddIgisokozoForm = (props) => {
         </p>
       </div>
       {/* ongeramwoButtonRow */}
-      <div className="Row" id="ongeramwoButton" style={{"padding-top": 10px;}}>
+      {/* eslint-disable-next-line */}
+      <div className="Row" id="ongeramwoButton" style={ongeramwoButton}>
         <p>
           <button
             type="submit"
@@ -68,7 +70,7 @@ const AddIgisokozoForm = (props) => {
       </div>
     </form>
   );
- };
+};
 
 
 // Creates a decorator with which you use redux-form to connect your form component to Redux.

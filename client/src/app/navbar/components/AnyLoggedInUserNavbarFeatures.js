@@ -1,21 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Nav, NavItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
 import Greeting from './Greeting';
 import AdminNavbarFeatures from './AdminNavbarFeatures';
+import AnyLoggedInUserAfterBrandLinks from './AnyLoggedInUserAfterBrandLinks';
 
 const AnyLoggedInUserNavbarFeatures = (props) => {
   if (props.isAdmin === true && props.showAdminFeatures === true) {
     return (
       <div>
         <Nav bsStyle="pills" activeKey={props.selectedKey}>
-          <LinkContainer to="/about">
-            <NavItem eventKey={1}>About</NavItem>
-          </LinkContainer>
-          <LinkContainer to="/isokoranye">
-            <NavItem eventKey={2}>Isokoranye</NavItem>
-          </LinkContainer>
+          <AnyLoggedInUserAfterBrandLinks />
           <AdminNavbarFeatures />
         </Nav>
         <Greeting currentUserName={props.currentUserName} />
@@ -29,12 +24,7 @@ const AnyLoggedInUserNavbarFeatures = (props) => {
   return (
     <div>
       <Nav bsStyle="pills" activeKey={props.selectedKey}>
-        <LinkContainer to="/about">
-          <NavItem eventKey={1}>About</NavItem>
-        </LinkContainer>
-        <LinkContainer to="/isokoranye">
-          <NavItem eventKey={2}>Isokoranye</NavItem>
-        </LinkContainer>
+        <AnyLoggedInUserAfterBrandLinks />
       </Nav>
       <Greeting currentUserName={props.currentUserName} />
       <Nav pullRight>
