@@ -1,4 +1,3 @@
-"use strict";
 import fetch from 'isomorphic-fetch';
 import * as types from '../../../constants/constants';
 import * as api from '../../../constants/ApiConstants';
@@ -11,7 +10,7 @@ function addIgisokozoActionsCreators(){
 			return{
 				type:types.ADD_IGISOKOZO_REQUEST,
 				payload:{
-					isSaving:true
+					isSaving:true,
 				}
 			};
 		},
@@ -19,8 +18,8 @@ function addIgisokozoActionsCreators(){
 			return{
 				type:types.ADD_IGISOKOZO_SUCCESS,
 				payload:{
-					isSaving:false
-					lastAddedSokozo:json,					
+					isSaving:false,
+					lastAddedSokozo: json,
 				}
 			};
 		},
@@ -34,7 +33,7 @@ function addIgisokozoActionsCreators(){
 		},
 		addIgisokozo: function addIgisokozo(aSokozo2Add) {
 			//returns a function(that accepts `dispatch` so we can dispatch later) instead of an action
-			return (dispatch) => { 
+			return (dispatch) => {
 				dispatch(this.addIgisokozoRequestActionCreator());
 				return fetch(`${api.API_URL}/isokoranye/newSokozo`, {
 					method: 'POST',
@@ -49,7 +48,7 @@ function addIgisokozoActionsCreators(){
 				  }).catch((error) => {
 						dispatch(this.addIgisokozoFailedActionCreator());
 						console.log('Error fetching data', error);
-				  });	
+				  });
 	        };
         };
 	};
