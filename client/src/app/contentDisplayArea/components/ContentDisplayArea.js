@@ -6,6 +6,7 @@ import AdminLayout from '../../admin/components/AdminLayout/AdminLayout';
 // import HomeLayout from '../../home/components/HomeLayout';
 // import AboutLayout from '../../about/components/AboutLayout';
 import navbarRoutes from '../../navbar/navbarRoutes/navbarRoutes';
+// import LoginForm from '../../loginNsignup/components/LoginForm/LoginForm';
 
 
 // renders either HomeLayout or AdminLayout or any loggedin user component
@@ -50,6 +51,8 @@ class ContentDisplayArea extends Component {
           // eslint-disable-next-line react/no-array-index-key
           <Route key={id} path={route.path} exact={route.exact} component={route.main} />
         ))}
+        {/* eslint-disable-next-line react/jsx-no-bind
+        <Route path="/login" render={(props) => <LoginForm {...props} />} /> */}
       </div>
     );
   }

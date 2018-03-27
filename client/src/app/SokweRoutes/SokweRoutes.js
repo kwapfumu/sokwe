@@ -13,6 +13,7 @@ import SokweAppLayout from '../SokweAppLayout';
 // import AddIgisokozoForm from
 //  '../isokoranye/components/OngeramwoRow/AddIgisokozoForm/AddIgisokozoForm';
 
+
 const SokweRoutes = () => {
   return (
     <BrowserRouter>

@@ -27,6 +27,7 @@ class NavbarSokwe extends Component {
       break;
     case 4: // react router handles redirecting to /login
       this.setState({ selectedKey: eventKey });
+      this.props.history.push('/login');
       break;
     case 5:
     // auth0Fctr.logout();
@@ -68,6 +69,9 @@ class NavbarSokwe extends Component {
 }
 
 NavbarSokwe.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
   isAdmin: PropTypes.bool.isRequired,
   isLoggedIn: PropTypes.bool.isRequired,
   getState: PropTypes.func.isRequired,

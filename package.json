@@ -7,9 +7,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --env development --progress --colors --watch && nodemon --watch webpack.config.js --exec babel-node -- server/server",
+    "start": "webpack --env production --progress --colors --watch && nodemon --watch webpack.config.js --exec babel-node -- server/server",
     "client": "webpack-dev-server --env development --progress --colors --watch",
-    "server": "nodemon --watch webpack.config.js --exec babel-node -- server/server",
+    "server": "nodemon --watch server/server.js --exec babel-node -- server/server",
     "test": "jest --coverage",
     "test:watch": "yarn test -- --watch",
     "build": "webpack --env production --progress --profile --colors"
@@ -79,6 +79,7 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.41",
     "@babel/plugin-transform-react-jsx-source": "^7.0.0-beta.40",
+    "autoprefixer": "^8.2.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
@@ -91,6 +92,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "bootstrap-loader": "*",
+    "bootstrap-sass": "^3.3.7",
     "cdn-loader": "^0.1.8-0",
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.10",
@@ -122,6 +124,8 @@
     "webpack-cli": "^2.0.12",
     "webpack-dev-middleware": "^3.0.1",
     "webpack-dev-server": "^3.1.1",
-    "webpack-merge": "^4.1.2"
+    "webpack-hot-middleware": "^2.21.2",
+    "webpack-merge": "^4.1.2",
+    "write-file-webpack-plugin": "^4.2.0"
   }
 }

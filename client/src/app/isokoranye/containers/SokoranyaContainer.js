@@ -1,13 +1,15 @@
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import aSokozoSelector from '../../selectors/aSokozoSelector';
 import Sokoranya from '../components/Sokoranya/Sokoranya';
 
+// eslint-disable-next-line
 const mapStateToProps = (state, ownProps) => {
-	return {
-		aSokozo: aSokozoSelector(state),
-	};
+  return {
+    aSokozo: aSokozoSelector(state),
+  };
 };
 
-const SokoranyaContainer = connect(mapStateToProps)(Sokoranya);
+const SokoranyaContainer = withRouter(connect(mapStateToProps)(Sokoranya));
 
 export default SokoranyaContainer;

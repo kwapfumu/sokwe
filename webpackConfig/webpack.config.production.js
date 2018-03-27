@@ -4,6 +4,7 @@ const webpackMerge = require('webpack-merge');
 const commonWebpackConfig = require('./baseWebpackConfig');
 const exTractCss = require('./parts/extractCss');
 const loadImages = require('./parts/loadImages');
+const loadVideos = require('./parts/loadVideos');
 const generateSourceMaps = require('./parts/generateSourceMaps');
 const UglifyWebpackPlugin = require("uglifyjs-webpack-plugin");
 const clean = require('./parts/clean');
@@ -31,6 +32,7 @@ const webpackConfigProd = function webpackConfigProd(env) {
         name: "[name].[hash:4].[ext]",
       },
     }),
+    loadVideos({ options: { limit: 10000, mimetype: "video/mp4" } }),
     {
       optimization: {
         splitChunks: {
@@ -51,9 +53,9 @@ const webpackConfigProd = function webpackConfigProd(env) {
       },
     },
     clean([
-      'client/dist/public/*.js',
-      'client/dist/public/*.html',
-      'client/dist/public/css/*.*',
+      '../../client/dist/public/*.js',
+      '../../client/dist/public/*.html',
+      '../../client/dist/public/css/*.*',
     ]),
     minifyJs(),
     minifyCss({
