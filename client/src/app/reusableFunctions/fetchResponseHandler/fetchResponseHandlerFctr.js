@@ -10,6 +10,7 @@
  * status, define a custom response handler: */
 const fetchResponseHandlerFctr = function fetchResponseHandlerFctr() {
   return {
+    // eslint-disable-next-line consistent-return
     checkHttpErrorStatus: function checkHttpErrorStatus(response) {
       if (response.status >= 200 && response.status < 300) {
         return response;

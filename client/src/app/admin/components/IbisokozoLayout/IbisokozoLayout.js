@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Row, ListGroup } from 'react-bootstrap';
 import fetchIbisokozoActionsCreators from '../../actions/ibisokozoActionsCreators/fetchIbisokozoActionsCreators';
+import adminDeleteIgisokozoActionsCreators from '../../actions/adminIgisokozoActionsCreators/adminDeleteIgisokozoActionsCreator';
 import AdminIgisokozoPanel from '../AdminIgisokozoPanel/AdminIgisokozoPanel';
 
 class IbisokozoLayout extends Component {
+  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
   }
@@ -15,17 +17,19 @@ class IbisokozoLayout extends Component {
 
   adminOpenEditSokozoForm(e) {
     e.preventDefault();
-    this.props.history.push('/')
+    // eslint-disable-next-line no-template-curly-in-string
+    this.props.history.push('/admin/ibisokozo/:aSokozoId/edit');
   }
 
-  deleteSokozo(e,id) {
+  deleteSokozo(e, anId) {
     e.preventDefault();
-    this.props.dispatch();
+    this.props.dispatch(adminDeleteIgisokozoActionsCreators.deleteAsokozo(anId));
   }
 
   dispayIbisokozoList() {
-    ibisokozo.map((aSokozo) => (
+    return this.props.ibisokozo.map((aSokozo) => (
       <AdminIgisokozoPanel
+        // eslint-disable-next-line no-underscore-dangle
         key={aSokozo._id}
         aSokozo={aSokozo}
         handleClickEditSokozo={this.adminOpenEditSokozoForm.bind(this)}
@@ -40,7 +44,7 @@ class IbisokozoLayout extends Component {
         <Row>
           <h2>Ibisoko layout</h2>
           <ListGroup componentClass="ul">
-            {IbisokozoList}
+            {this.dispayIbisokozoList()}
           </ListGroup>
         </Row>
       </Grid>
@@ -51,7 +55,14 @@ class IbisokozoLayout extends Component {
 IbisokozoLayout.propTypes = {
   dispatch: PropTypes.func.isRequired,
   history: PropTypes.shape({
-    push: PropTypes.element.isRequired,
+    push: PropTypes.func.isRequired,
   }).isRequired,
+  ibisokozo: PropTypes.array.isRequired,
+  // match: PropTypes.shape({
+  // params: PropTypes.object.isRequired,
+  //  isExact: PropTypes.bool.isRequired,
+  //  path: PropTypes.string.isRequired,
+  //  url: PropTypes.string.isRequired,
+  // }).isRequired,
 };
 export default IbisokozoLayout;

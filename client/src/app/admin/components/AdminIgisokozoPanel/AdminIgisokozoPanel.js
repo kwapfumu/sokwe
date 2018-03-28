@@ -9,10 +9,12 @@ const AdminIgisokozoPanel = (props) => (
         <Col sm={10} md={10} lg={10}>{props.aSokozo.igisokozo}</Col>
         <Col sm={2} md={2} lg={2}>
           <ButtonToolbar>
-            <Button bsStyle="warning" bsSize="small" onClick={props.handleClickEditSokozo}>
+            {/* eslint-disable-next-line no-underscore-dangle */}
+            <Button bsStyle="warning" bsSize="small" onClick={props.handleClickEditSokozo(props.aSokozo._id)}>
               <Glyphicon glyph="edit" />
             </Button>
-            <Button bsStyle="danger" bsSize="small" onClick={props.handleClickDeleteSokozo}>
+            {/* eslint-disable-next-line no-underscore-dangle */}
+            <Button bsStyle="danger" bsSize="small" onClick={props.handleClickDeleteSokozo(props.aSokozo._id)}>
               <Glyphicon glyph="trash" />
             </Button>
           </ButtonToolbar>
@@ -29,6 +31,7 @@ const AdminIgisokozoPanel = (props) => (
 
 AdminIgisokozoPanel.propTypes = {
   aSokozo: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
     igisokozo: PropTypes.string.isRequired,
     inyishu: PropTypes.string.isRequired,
   }).isRequired,

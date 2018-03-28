@@ -53,11 +53,12 @@ function fetchIbisokozoActionsCreators() {
       return (dispatch) => {
         dispatch(this.requestIbisokozo());
         return fetch(`${api.API_URL}/isokoranye`, { headers: api.API_HEADERS })
-          .then(fetchResponseHandlerFctr.checkHttpErrorStatus(response))
+          .then((response) => fetchResponseHandlerFctr.checkHttpErrorStatus(response))
           .then((response) => response.json())
           .then((json) => dispatch(this.receivedIbisokozo(json)))
           .catch((error) => {
             dispatch(this.fetchIbisokozoFailed());
+            // eslint-disable-next-line no-console
             console.log('Error fetching data', error);
           });
       };

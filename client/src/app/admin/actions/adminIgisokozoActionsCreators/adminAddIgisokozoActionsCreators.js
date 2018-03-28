@@ -2,9 +2,8 @@ import fetch from 'isomorphic-fetch';
 import * as types from '../../../constants/constants';
 import * as api from '../../../constants/ApiConstants';
 import fetchResponseHandlerFctr from '../../../reusableFunctions/fetchResponseHandler/fetchResponseHandlerFctr';
-import incrementUserScoreActionsCreators from '../currentUserActionsCreators/incrementUserScoreActionsCreators';
 
-const addIgisokozoActionsCreators = function addIgisokozoActionsCreators() {
+const adminAddIgisokozoActionsCreators = function adminAddIgisokozoActionsCreators() {
   return {
     addIgisokozoRequestActionCreator: function addIgisokozoRequestActionCreator() {
       return {
@@ -35,17 +34,13 @@ const addIgisokozoActionsCreators = function addIgisokozoActionsCreators() {
       // returns a function(that accepts `dispatch` so we can dispatch later) instead of an action
       return (dispatch) => {
         dispatch(this.addIgisokozoRequestActionCreator());
-        return fetch(`${api.API_URL}/isokoranye/newSokozo`, {
+        return fetch(`${api.API_URL}/admin/ibisokozo/newSokozo`, {
           method: 'POST',
           headers: api.API_HEADERS,
           body: JSON.stringify(aSokozo2Add),
         }).then((response) => fetchResponseHandlerFctr.checkHttpErrorStatus(response))
           .then((response) => response.json())
-          .then((json) => {
-            dispatch(this.addedIgisokozoActionCreator(json));
-            dispatch(incrementUserIbisokozoAddedActionsCreators.incrementUserIbisokozoAdded());
-            dispatch(incrementUserScoreActionsCreators.incrementUserScore());
-          })
+          .then((json) => dispatch(this.addedIgisokozoActionCreator(json)))
           .catch((error) => {
             dispatch(this.addIgisokozoFailedActionCreator());
             // eslint-disable-next-line no-console
@@ -56,4 +51,4 @@ const addIgisokozoActionsCreators = function addIgisokozoActionsCreators() {
   };
 };
 
-export default addIgisokozoActionsCreators;
+export default adminAddIgisokozoActionsCreators;

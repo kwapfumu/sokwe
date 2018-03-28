@@ -58,6 +58,7 @@ function fetchIbisokozoActionsCreators() {
           .then((json) => dispatch(this.receivedIbisokozo(json)))
           .catch((error) => {
             dispatch(this.fetchIbisokozoFailed());
+            // eslint-disable-next-line no-console
             console.log('Error fetching data', error);
           });
       };
