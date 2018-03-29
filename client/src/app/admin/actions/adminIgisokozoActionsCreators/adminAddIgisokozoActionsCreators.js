@@ -18,6 +18,7 @@ const adminAddIgisokozoActionsCreators = function adminAddIgisokozoActionsCreato
         type: types.ADD_IGISOKOZO_SUCCESS,
         payload: {
           isSaving: false,
+          // this might be in the wrong action creator re-think when not tired
           lastAddedSokozo: json,
         },
       };
@@ -44,7 +45,7 @@ const adminAddIgisokozoActionsCreators = function adminAddIgisokozoActionsCreato
           .catch((error) => {
             dispatch(this.addIgisokozoFailedActionCreator());
             // eslint-disable-next-line no-console
-            console.log('Error fetching data', error);
+            console.log('Error adding a sokozo', error);
           });
       };
     },
