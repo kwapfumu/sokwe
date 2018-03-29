@@ -10,11 +10,13 @@
     "indent": ["error", 2],
     "no-else-return": [ "error", { "allowElseIf": true }],
     "no-param-reassign": 0,
+    "object-shorthand": ["error", "never"],
     "quotes": 0,
     "linebreak-style": ["error", "windows"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-no-bind": ["error", { "ignoreRefs": false, "allowArrowFunctions": false, "allowFunctions": false, "allowBind": true }],
-    "react/no-did-mount-set-state": 0
+    "react/no-did-mount-set-state": 0,
+    "react/forbid-prop-types": ["error",{ "forbid": ["any"]} ]
   },
   "env": {
     "browser": true,
@@ -34,7 +36,7 @@
         "ecmaFeatures": {
             "jsx": true,
             "impliedStrict": true,
-            "globalReturn": true         
+            "globalReturn": true
         }
     },
   "plugins": ["import", "react", "jsx-a11y"]
