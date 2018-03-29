@@ -26,8 +26,8 @@ class IbisokozoLayout extends Component {
     this.props.dispatch(adminDeleteIgisokozoActionsCreators.deleteAsokozo(anId));
   }
 
-  dispayIbisokozoList() {
-    return this.props.ibisokozo.map((aSokozo) => (
+  render() {
+    const IbisokozoList = this.props.ibisokozo.map((aSokozo) => (
       <AdminIgisokozoPanel
         // eslint-disable-next-line no-underscore-dangle
         key={aSokozo._id}
@@ -36,15 +36,12 @@ class IbisokozoLayout extends Component {
         handleClickDeleteSokozo={this.deleteSokozo.bind(this)}
       />
     ));
-  }
-
-  render() {
     return (
       <Grid>
         <Row>
           <h2>Ibisoko layout</h2>
           <ListGroup componentClass="ul">
-            {this.dispayIbisokozoList()}
+            {IbisokozoList}
           </ListGroup>
         </Row>
       </Grid>
@@ -57,7 +54,7 @@ IbisokozoLayout.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
-  ibisokozo: PropTypes.array.isRequired,
+  ibisokozo: PropTypes.arrayOf(PropTypes.object).isRequired,
   // match: PropTypes.shape({
   // params: PropTypes.object.isRequired,
   //  isExact: PropTypes.bool.isRequired,
