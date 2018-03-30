@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import { adminFeaturesReducer } from './admin/reducers/adminFeaturesReducers/adminFeaturesReducer';
-// import { fetchUsersReducer } from './admin/reducers/fetchUsersReducers/fetchUsersReducer';
-
+import isokoranyeReducer from './isokoranye/reducers/isokoranyeReducer';
 
 /* First and foremost, it's important to understand that your entire application really only has one
 * single reducer function: the function that you've passed into createStore as the first argument.
@@ -15,8 +14,8 @@ import { adminFeaturesReducer } from './admin/reducers/adminFeaturesReducers/adm
 *   updated data and return those
 * - If no changes are needed, it should return the existing state as-is. */
 const rootReducer = combineReducers({
-  adminFeatures: adminFeaturesReducer,
-  // users: fetchUsersReducer,
+  adminFeaturesReducer: adminFeaturesReducer,
+  isokoranyeReducer: isokoranyeReducer,
   form: formReducer,
 });
 

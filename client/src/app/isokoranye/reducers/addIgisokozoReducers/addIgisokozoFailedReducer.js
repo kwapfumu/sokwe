@@ -1,5 +1,5 @@
-import update from 'immutability-helper';
 import 'babel-polyfill';
+import update from 'immutability-helper';
 
 // Case reducer
 export default function addIgisokozoFailedReducer(ibisokozoState, action) {

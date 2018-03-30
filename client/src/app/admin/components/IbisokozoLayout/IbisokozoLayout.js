@@ -39,7 +39,7 @@ class IbisokozoLayout extends Component {
     return (
       <Grid>
         <Row>
-          <h2>Ibisoko layout</h2>
+          <h2>This is Ibisoko layout</h2>
           <ListGroup componentClass="ul">
             {IbisokozoList}
           </ListGroup>

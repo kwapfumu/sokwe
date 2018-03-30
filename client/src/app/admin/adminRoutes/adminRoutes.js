@@ -1,5 +1,5 @@
-import IbisokozoLayout from '../components/IbisokozoLayout/IbisokozoLayout';
-// import IbisokozoContainer from '../containers/IbisokozoContainer';
+// import IbisokozoLayout from '../components/IbisokozoLayout/IbisokozoLayout';
+import IbisokozoContainer from '../containers/IbisokozoContainer';
 // import AddIgisokozoForm from
 // '../../isokoranye/components/OngeramwoRow/AddIgisokozoForm/AddIgisokozoForm';
 // import AdminEditSokozo from '../components/AdminEditSokozo/AdminEditSokozo';
@@ -7,48 +7,48 @@ import IbisokozoLayout from '../components/IbisokozoLayout/IbisokozoLayout';
 const adminRoutes = [
   // {
   //  id: "admin0",
-  //  path: "/admin/users",
+  //  path: "/users",
   //  exact: true,
   //  main: UsersList,
   // },
   // {
   //  id: "admin1",
-  //  path: "/admin/users/create",
+  //  path: "/users/create",
   //  exact: true,
   //  main: AdminAddUserForm,
   // },
   // {
   //  id: "admin2",
-  //  path: "/admin/users/:userId",
+  //  path: "/users/:userId",
   //  exact: true,
   //  main: AdminUserDetails,
   // },
   // {
   //  id: "admin3",
-  //  path: "/admin/users/:userId/edit",
+  //  path: "/users/:userId/edit",
   //  exact: true,
   //  main: AdminEditUser,
   // },
   {
     id: "admin4",
-    path: "/admin/ibisokozo",
-    main: IbisokozoLayout,
+    path: "/ibisokozo",
+    main: IbisokozoContainer,
   },
   // {
   //  id: "admin5",
-  //  path: "/admin/ibisokozo/newSokozo",
+  //  path: "/ibisokozo/newSokozo",
   //  exact: true,
   //  main: AddIgisokozoForm,
   // },
   // {
   //  id: "admin6",
-  //  path: "/admin/ibisokozo/:${match.params.aSokozo._id}/edit",
+  //  path: "/ibisokozo/:${match.params.aSokozo._id}/edit",
   //  exact: true,
   //  main: AdminEditSokozo,
   // },
   // {
   //  id: "admin7",
-  //  path: "/admin/ibisokozo/:sokozoId/delete",
+  //  path: "/ibisokozo/:sokozoId/delete",
   //  exact: true,
   //  main: IbisokozoLayout,
   // },
