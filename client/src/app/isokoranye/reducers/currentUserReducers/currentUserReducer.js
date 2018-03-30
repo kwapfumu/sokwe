@@ -49,7 +49,7 @@ import { addPlayedSokozoIdFailedReducer } from './addPlayedSokozoIdFailedReducer
 export default function currentUserReducer(currentUserState = {
   isSaving: false,
   isFetching: false,
-  currentUser: currentUser,
+  currentUser: {},
 }, action) {
   switch (action.type) {
   case 'ADD_IGISOKOZO_REQUEST': return addIgisokozoRequestReducer(currentUserState, action);

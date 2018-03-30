@@ -3,8 +3,8 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 // import createBrowserHistory from 'history/createBrowserHistory';
-// import SokweAppContainer from '../SokweAppContainer';
-import SokweAppLayout from '../SokweAppLayout';
+import SokweAppContainer from '../SokweAppContainer';
+// import SokweAppLayout from '../SokweAppLayout';
 // import HomeLayout from '../home/components/HomeLayout';
 // import AdminLayout from '../admin/components/AdminLayout/AdminLayout';
 // import AboutLayout from '../about/components/AboutLayout';
@@ -17,7 +17,7 @@ import SokweAppLayout from '../SokweAppLayout';
 const SokweRoutes = () => {
   return (
     <BrowserRouter>
-      <SokweAppLayout />
+      <SokweAppContainer />
     </BrowserRouter>
   );
 };

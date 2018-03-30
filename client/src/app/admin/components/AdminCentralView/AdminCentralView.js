@@ -14,9 +14,9 @@ const AdminCentralView = (props) => (
       <Route
         // eslint-disable-next-line react/no-array-index-key
         key={id}
-        path={`${props.match.path}route.path`}
+        path={`${props.match.url}route.path`}
         exact={route.exact}
-        render={route.main}
+        component={route.main}
       />
     ))}
   </Col>

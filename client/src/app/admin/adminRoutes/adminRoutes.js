@@ -1,57 +1,67 @@
-// import IbisokozoLayout from '../components/IbisokozoLayout/IbisokozoLayout';
+import UsersContainer from '../containers/UsersContainer';
 import IbisokozoContainer from '../containers/IbisokozoContainer';
+import UrlNotFound from '../../reusableComponents/UrlNotFound/UrlNotFound';
 // import AddIgisokozoForm from
 // '../../isokoranye/components/OngeramwoRow/AddIgisokozoForm/AddIgisokozoForm';
 // import AdminEditSokozo from '../components/AdminEditSokozo/AdminEditSokozo';
 
 const adminRoutes = [
+  {
+    id: "admin0",
+    path: "/admin",
+    exact: true,
+    main: IbisokozoContainer,
+  },
+  {
+    id: "admin1",
+    path: "/users",
+    main: UsersContainer,
+  },
   // {
-  //  id: "admin0",
-  //  path: "/users",
-  //  exact: true,
-  //  main: UsersList,
-  // },
-  // {
-  //  id: "admin1",
+  //  id: "admin2",
   //  path: "/users/create",
   //  exact: true,
   //  main: AdminAddUserForm,
   // },
   // {
-  //  id: "admin2",
+  //  id: "admin3",
   //  path: "/users/:userId",
   //  exact: true,
   //  main: AdminUserDetails,
   // },
   // {
-  //  id: "admin3",
+  //  id: "admin4",
   //  path: "/users/:userId/edit",
   //  exact: true,
   //  main: AdminEditUser,
   // },
   {
-    id: "admin4",
+    id: "admin5",
     path: "/ibisokozo",
     main: IbisokozoContainer,
   },
   // {
-  //  id: "admin5",
+  //  id: "admin6",
   //  path: "/ibisokozo/newSokozo",
   //  exact: true,
   //  main: AddIgisokozoForm,
   // },
   // {
-  //  id: "admin6",
-  //  path: "/ibisokozo/:${match.params.aSokozo._id}/edit",
+  //  id: "admin7",
+  //  path: "/ibisokozo/:sokozoId/edit",
   //  exact: true,
   //  main: AdminEditSokozo,
   // },
   // {
-  //  id: "admin7",
+  //  id: "admin8",
   //  path: "/ibisokozo/:sokozoId/delete",
   //  exact: true,
-  //  main: IbisokozoLayout,
+  //  main: IbisokozoContainer,
   // },
+  {
+    id: "notFound",
+    main: UrlNotFound,
+  },
 ];
 
 export default adminRoutes;
