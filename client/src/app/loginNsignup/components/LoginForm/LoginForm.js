@@ -16,6 +16,8 @@ class LoginForm extends Component {
 
   closeEmailFormModal() {
     this.setState({ showModal: false });
+    // change the url without reloading
+    // this.props.history.push('/');
   }
 
   render() {
@@ -29,5 +31,6 @@ class LoginForm extends Component {
     );
   }
 }
-// LoginForm.propTypes = {};
+// LoginForm.propTypes = {}
+};
 export default LoginForm;

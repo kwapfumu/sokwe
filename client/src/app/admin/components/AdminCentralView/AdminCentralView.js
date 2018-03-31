@@ -16,7 +16,8 @@ const AdminCentralView = (props) => (
         key={id}
         path={`${props.match.url}route.path`}
         exact={route.exact}
-        component={route.main}
+        // eslint-disable-next-line react/jsx-no-bind
+        render={() => route.main}
       />
     ))}
   </Col>

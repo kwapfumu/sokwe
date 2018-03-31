@@ -12,14 +12,16 @@ class EmailForm extends Component {
   }
 
   // custom propValidator:todo=> refactor it when u less tired...
-	getValidationState() {
+  getValidationState() {
+    // eslint-disable-next-line prefer-destructuring
     const length = this.state.email.length;
-    const emailPattern = new RegExp('/\b[a-z][a-z0-9._-]*@[a-z][a-z0-9_-]+\.[a-z]+(?:\.[a-z]+)?\b/ig');
+    // eslint-disable-next-line no-control-regex no-useless-escape
+   const emailPattern = new RegExp('/\b[a-z][a-z0-9._-]*@[a-z][a-z0-9_-]+\.[a-z]+(?:\.[a-z]+)?\b/ig');
     if (length > 7 && this.state.email === emailPattern) {
       return 'success';
     }
 
-    this.setState({ help: '${label} is not a valid email address' });
+    this.setState({ help: `${label} is not a valid email address` });
     return 'error';
   }
 
@@ -45,7 +47,7 @@ class EmailForm extends Component {
           <FormControl {...props} />
         </Col>
         <FormControl.Feedback />
-        <HelpBlock>{help}</HelpBlock>
+        <HelpBlock>{this.state.help}</HelpBlock>
       </FormGroup>
     );
   }

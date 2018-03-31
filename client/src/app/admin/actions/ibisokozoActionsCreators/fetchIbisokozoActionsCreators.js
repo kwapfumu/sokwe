@@ -22,7 +22,7 @@ function fetchIbisokozoActionsCreators() {
         type: types.FETCH_IBISOKOZO_SUCCESS,
         payload: {
           isFetching: false,
-          backlogTasks: json.data.children.map((child) => child.data),
+          ibisokozo: json.data.children.map((child) => child.data),
           // receivedAt: Date.now(),
         },
       };

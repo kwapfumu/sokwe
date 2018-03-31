@@ -12,11 +12,14 @@ class AdminLeftSideNavigation extends Component {
   handleSelect(e, eventKey) {
     e.preventDefault();
     switch (eventKey) {
-    case 1: // react router renders //admin/users
+    case 1: // react router renders /admin/users
       this.props.history.push('/admin/users');
       break;
-    case 2: // react router renders //admin/users
+    case 2: // react router renders /admin/ibisokozo
       this.props.history.push('/admin/ibisokozo');
+      break;
+    case 3: // react router renders /admin/ibisokozo/newSokozo
+      this.props.history.push('/admin/ibisokozo/newSokozo');
       break;
     default:
       this.props.history.goBack();
@@ -40,9 +43,9 @@ class AdminLeftSideNavigation extends Component {
         <LinkContainer to="/admin/ibisokozo">
           <NavItem eventKey={2}>Ibisokozo</NavItem>
         </LinkContainer>
-        {/* <NavItem eventKey={3} onClick={this.props.openAdminAddSokozoForm.bind(this)} >
-        Add Igisokozo
-      </NavItem> */}
+        <LinkContainer to="/admin/ibisokozo/newSokozo">
+          <NavItem eventKey={3}>Add Igisokozo</NavItem>
+        </LinkContainer>
       </Nav>
     );
   }

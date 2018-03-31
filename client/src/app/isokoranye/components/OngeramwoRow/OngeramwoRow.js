@@ -5,10 +5,9 @@ import addIgisokozoActionsCreators from '../../actions/igisokozoActionsCreators/
 import { AddIgisokozoFormReactBootstrap } from './AddIgisokozoForm/AddIgisokozoFormReactBootstrap';
 
 
-class OngeramwoRow extends Component{
+class OngeramwoRow extends Component {
 	constructor(props){
 		super(props);
-
 	}
 	/**@params json data passed by AddIgisokozoForm */
 	submit(values) {

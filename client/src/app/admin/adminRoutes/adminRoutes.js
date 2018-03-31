@@ -1,9 +1,8 @@
 import UsersContainer from '../containers/UsersContainer';
 import IbisokozoContainer from '../containers/IbisokozoContainer';
 import UrlNotFound from '../../reusableComponents/UrlNotFound/UrlNotFound';
-// import AddIgisokozoForm from
-// '../../isokoranye/components/OngeramwoRow/AddIgisokozoForm/AddIgisokozoForm';
-// import AdminEditSokozo from '../components/AdminEditSokozo/AdminEditSokozo';
+import AdminAddIgisokozoForm from '../components/AdminAddIgisokozoForm/AdminAddIgisokozoForm';
+import AdminEditSokozo from '../components/AdminEditSokozo/AdminEditSokozo';
 
 const adminRoutes = [
   {
@@ -40,20 +39,20 @@ const adminRoutes = [
     path: "/ibisokozo",
     main: IbisokozoContainer,
   },
-  // {
-  //  id: "admin6",
-  //  path: "/ibisokozo/newSokozo",
-  //  exact: true,
-  //  main: AddIgisokozoForm,
-  // },
-  // {
-  //  id: "admin7",
-  //  path: "/ibisokozo/:sokozoId/edit",
-  //  exact: true,
-  //  main: AdminEditSokozo,
-  // },
-  // {
-  //  id: "admin8",
+  {
+    id: "admin6",
+    path: "/ibisokozo/newSokozo",
+    exact: true,
+    main: AdminAddIgisokozoForm,
+  },
+  {
+    id: "admin7",
+    path: "/ibisokozo/:sokozoId/edit",
+    exact: true,
+    main: AdminEditSokozo,
+  },
+  // { API call => already defined in express routes
+  // id: "admin8",
   //  path: "/ibisokozo/:sokozoId/delete",
   //  exact: true,
   //  main: IbisokozoContainer,

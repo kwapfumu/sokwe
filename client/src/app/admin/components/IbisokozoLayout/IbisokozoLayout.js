@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Row, ListGroup } from 'react-bootstrap';
 import fetchIbisokozoActionsCreators from '../../actions/ibisokozoActionsCreators/fetchIbisokozoActionsCreators';
+import adminGetIgisokozoActionsCreators from '../../actions/adminIgisokozoActionsCreators/adminGetIgisokozoActionsCreators';
 import adminDeleteIgisokozoActionsCreators from '../../actions/adminIgisokozoActionsCreators/adminDeleteIgisokozoActionsCreators';
 import AdminIgisokozoPanel from '../AdminIgisokozoPanel/AdminIgisokozoPanel';
 
@@ -15,10 +16,9 @@ class IbisokozoLayout extends Component {
     this.props.dispatch(fetchIbisokozoActionsCreators.fetchIbisokozo());
   }
 
-  adminOpenEditSokozoForm(e) {
+  adminOpenEditSokozoForm(e, anId) {
     e.preventDefault();
-    // eslint-disable-next-line no-template-curly-in-string
-    this.props.history.push('/admin/ibisokozo/:aSokozoId/edit');
+    this.props.dispatch(adminGetIgisokozoActionsCreators.getIgisokozo(anId));
   }
 
   deleteSokozo(e, anId) {
