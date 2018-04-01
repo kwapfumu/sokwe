@@ -2,7 +2,7 @@ import UsersContainer from '../containers/UsersContainer';
 import IbisokozoContainer from '../containers/IbisokozoContainer';
 import UrlNotFound from '../../reusableComponents/UrlNotFound/UrlNotFound';
 import AdminAddIgisokozoForm from '../components/AdminAddIgisokozoForm/AdminAddIgisokozoForm';
-import AdminEditSokozo from '../components/AdminEditSokozo/AdminEditSokozo';
+import AdminEditSokozoForm from '../components/AdminEditSokozoForm/AdminEditSokozoForm';
 
 const adminRoutes = [
   {
@@ -49,7 +49,7 @@ const adminRoutes = [
     id: "admin7",
     path: "/ibisokozo/:sokozoId/edit",
     exact: true,
-    main: AdminEditSokozo,
+    main: AdminEditSokozoForm,
   },
   // { API call => already defined in express routes
   // id: "admin8",

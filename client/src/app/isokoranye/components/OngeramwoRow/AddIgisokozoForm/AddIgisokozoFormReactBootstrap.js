@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Row, Col, FormGroup, Button, FormControl, HelpBlock } from 'react-bootstrap';
 
 
-class AddIgisokozoFormReactBootstrap extends Component{
+class AddIgisokozoFormReactBootstrap extends Component {
 	getInitialState() {
 		return {
 			value: ''
@@ -24,34 +24,30 @@ class AddIgisokozoFormReactBootstrap extends Component{
 
 	FieldGroup(id,label,help,{...props}){
 		return (
-			<FormGroup controlId={id}
-				       validationState={this.getValidationState()}>
-				<FormControl type="text"
-			                 placeholder={label}
-						     value={this.state.value}
-						     onChange={this.handleChange} />
+			<FormGroup controlId={id} validationState={this.getValidationState()}>
+				<FormControl
+					type="text"
+					placeholder={label}
+					value={this.state.value}
+					onChange={this.handleChange}
+				/>
 				<FormControl.Feedback />
 				<HelpBlock>{help}</HelpBlock>
 			</FormGroup>
 		);
 	}
-  
+
 	render(){
 		return (
 			<Form inline onSubmit={this.props.handleSubmit}>
 			<Row>
 				<Col md={5}>
-					<FieldGroup id="formInlineigisokozo"
-						        label="igisokozo"
-                                help={}	/>
-
-				</col>
+					<FieldGroup id="formInlineigisokozo" label="igisokozo" help={} />
+				</Col>
 				{' '}
 				<Col smOffset={1} md={5}>
-					<FieldGroup id="formInlineinyishu"
-						        label="inyishu"
-								help={} />
-				</col>
+					<FieldGroup id="formInlineinyishu" label="inyishu" help={} />
+				</Col>
 			</Row>
 			{/*ongeramwoButtonRow*/}
 			<Row id="ongeramwoButton" style="padding-top:10px;">

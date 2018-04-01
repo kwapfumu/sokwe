@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Row, ListGroup } from 'react-bootstrap';
 import fetchIbisokozoActionsCreators from '../../actions/ibisokozoActionsCreators/fetchIbisokozoActionsCreators';
-import adminGetIgisokozoActionsCreators from '../../actions/adminIgisokozoActionsCreators/adminGetIgisokozoActionsCreators';
+import adminGetIgisokozoByIdActionsCreators from '../../actions/adminIgisokozoActionsCreators/adminGetIgisokozoByIdActionsCreators';
 import adminDeleteIgisokozoActionsCreators from '../../actions/adminIgisokozoActionsCreators/adminDeleteIgisokozoActionsCreators';
 import AdminIgisokozoPanel from '../AdminIgisokozoPanel/AdminIgisokozoPanel';
 
@@ -18,12 +18,17 @@ class IbisokozoLayout extends Component {
 
   adminOpenEditSokozoForm(e, anId) {
     e.preventDefault();
-    this.props.dispatch(adminGetIgisokozoActionsCreators.getIgisokozo(anId));
+    this.props.dispatch(adminGetIgisokozoByIdActionsCreators.getIgisokozo(anId));
+    const sokozo2Edit = this.props.getState().aSokozo2Edit;
+    if (sokozo2Edit !== null) {
+      this.props.history('/admin/ibisokozo/:sokozoId/edit');
+    }
   }
 
   deleteSokozo(e, anId) {
     e.preventDefault();
     this.props.dispatch(adminDeleteIgisokozoActionsCreators.deleteAsokozo(anId));
+    this.props.history('/admin/ibisokozo');
   }
 
   render() {
@@ -51,6 +56,7 @@ class IbisokozoLayout extends Component {
 
 IbisokozoLayout.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  getState: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,

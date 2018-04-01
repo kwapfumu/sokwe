@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
-import adminAddIgisokozoActionsCreators from '../../actions/adminIgisokozoActionsCreators/adminAddIgisokozoActionsCreators';
 import { ongeramwoButton } from '../../../isokoranye/scss/ongeramwo.scss';
 
 const required = function required(value) {
@@ -36,17 +35,9 @@ const renderField = ({
   </div>
 );
 
-let AdminAddIgisokozoForm = (props) => {
-  const handleSubmit = handleSubmit(e, values) {
-    e.preventDefault();
-    props.dispatch(adminAddIgisokozoActionsCreators.addIgisokozo(values));
-    props.history.push('/admin/ibisokozo');
-    e.stopPropagation();
-  };
-
-  return (
-    <form id="addIgisokozoForm" onSubmit={handleSubmit.bind(this)}>
-      <div className="Row">
+let AddIgisokozoForm = (props) => (
+  <form id="addIgisokozoForm" onSubmit={props.handleSubmit.bind(this)}>
+    <div className="Row">
         <p>
           <Field
             name="igisokozo"
@@ -93,8 +84,9 @@ let AdminAddIgisokozoForm = (props) => {
   }
 };
 
-AdminAddIgisokozoForm.propTypes = {
+AddIgisokozoForm.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
@@ -104,5 +96,5 @@ AdminAddIgisokozoForm.propTypes = {
 // It takes a config parameter which lets you configure your form.
 // the name of your form and the key(i.e form) to where your form's state will be mounted under
 // the redux-form reducer
-AdminAddIgisokozoForm = reduxForm({ form: 'aSokozo2Add' })(AdminAddIgisokozoForm);
-export default AdminAddIgisokozoForm;
+AddIgisokozoForm = reduxForm({ form: 'aSokozo2Add' })(AddIgisokozoForm);
+export default AddIgisokozoForm;

@@ -25,6 +25,12 @@ const navbarRoutes = [
   },
   {
     id: "third",
+    path: "/logout",
+    exact: true,
+    main: HomeLayout,
+  },
+  {
+    id: "fourth",
     path: "/admin",
     main: AdminLayout,
   },

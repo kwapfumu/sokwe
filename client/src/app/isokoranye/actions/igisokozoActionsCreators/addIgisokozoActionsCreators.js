@@ -2,6 +2,7 @@ import fetch from 'isomorphic-fetch';
 import * as types from '../../../constants/constants';
 import * as api from '../../../constants/ApiConstants';
 import fetchResponseHandlerFctr from '../../../reusableFunctions/fetchResponseHandler/fetchResponseHandlerFctr';
+import incrementUserIbisokozoAddedActionsCreators from '../currentUserActionsCreators/incrementUserIbisokozoAddedActionsCreators';
 import incrementUserScoreActionsCreators from '../currentUserActionsCreators/incrementUserScoreActionsCreators';
 
 const addIgisokozoActionsCreators = function addIgisokozoActionsCreators() {

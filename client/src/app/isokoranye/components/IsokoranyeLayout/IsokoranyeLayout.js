@@ -18,7 +18,7 @@ class IsokoranyeLayout extends Component {
   }
 
   toggleShowAddIgisokozoForm() {
-    this.setState({ showAddIgisokozoForm: !showAddIgisokozoForm });
+    this.setState({ showAddIgisokozoForm: !this.state.showAddIgisokozoForm });
   }
 
   render() {

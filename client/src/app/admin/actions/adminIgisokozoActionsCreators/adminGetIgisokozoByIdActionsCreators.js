@@ -1,32 +1,32 @@
 import fetch from 'isomorphic-fetch';
 import * as types from '../../../constants/constants';
 import * as api from '../../../constants/ApiConstants';
-import fetchResponseHandlerFctr from '../../../../reusableFunctions/fetchResponseHandler/fetchResponseHandlerFctr';
+import fetchResponseHandlerFctr from '../../../reusableFunctions/fetchResponseHandler/fetchResponseHandlerFctr';
 
-const adminGetIgisokozoActionsCreators = function adminGetIgisokozoActionsCreators() {
+const adminGetIgisokozoByIdActionsCreators = function adminGetIgisokozoByIdActionsCreators() {
   return {
     requestIgisokozo: function requestIgisokozo() {
       return {
-        type: types.GET_IGISOKOZO,
+        type: types.GET_IGISOKOZO_BYID,
         payload: {
-          isLoading: true,
+          isFetching: true,
         },
       };
     },
     receivedIgisokozo: function receivedIgisokozo(json) {
       return {
-        type: types.GET_IGISOKOZO_SUCCESS,
+        type: types.GET_IGISOKOZO_BYID_SUCCESS,
         payload: {
-          isLoading: false,
+          isFetching: false,
           aSokozo2Edit: json,
         },
       };
     },
     getIgisokozoFailed: function getIgisokozoFailed() {
       return {
-        type: types.GET_IGISOKOZO_ERROR,
+        type: types.GET_IGISOKOZO_BYID_ERROR,
         payload: {
-          isLoading: false,
+          isFetching: false,
         },
       };
     },
@@ -41,9 +41,10 @@ const adminGetIgisokozoActionsCreators = function adminGetIgisokozoActionsCreato
           .catch((error) => {
             dispatch(this.getIgisokozoFailed());
             // eslint-disable-next-line no-console
-            console.log('Error fetching data', error);
+            console.log('Error fetching a sokozo by id', error);
           });
       };
     },
+  };
 };
-export default adminGetIgisokozoActionsCreators;
+export default adminGetIgisokozoByIdActionsCreators;

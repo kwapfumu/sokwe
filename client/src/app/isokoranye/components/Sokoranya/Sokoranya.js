@@ -9,8 +9,8 @@ class Sokoranya extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			displayIgisokozo:false,
-			displayInyishu:false,
+			displayIgisokozo: false,
+			displayInyishu: false,
 		};
 	}
 
