@@ -1,7 +1,6 @@
 import 'babel-polyfill';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import sokozoByIdSelector from '../selectors/sokozoByIdSelector';
 import IbisokozoLayout from '../components/IbisokozoLayout/IbisokozoLayout';
 
 // eslint-disable-next-line
@@ -9,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     // currentUser: state.currentUser,
     ibisokozo: state.ibisokozo,
-    aSokozoById: sokozoByIdSelector(state)
+    aSokozo2Edit: state.aSokozo2Edit,
   };
 };
 // eslint-disable-next-line

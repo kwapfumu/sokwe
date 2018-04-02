@@ -31,6 +31,6 @@ class LoginForm extends Component {
     );
   }
 }
-// LoginForm.propTypes = {}
-};
+// LoginForm.propTypes = {};
+
 export default LoginForm;

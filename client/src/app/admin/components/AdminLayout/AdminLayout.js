@@ -18,10 +18,12 @@ class AdminLayout extends Component {
     return (
       <Grid>
         <Row>
-          <Col xs={3} sm={3} md={3} lg={3} className="adminLeftSideNavigation">
+          <Col xs={2} sm={2} md={2} lg={2} className="adminLeftSideNavigation">
             <AdminLeftSideNavigation />
           </Col>
-          <AdminCentralView />
+          <Col xs={8} sm={8} md={8} lg={8}mdOffset={1}>
+            <AdminCentralView />
+          </Col>
         </Row>
       </Grid>
     );

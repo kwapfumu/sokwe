@@ -13,7 +13,7 @@ class NavbarSokwe extends Component {
     };
   }
 
-  handleSelect(e,eventKey) {
+  handleSelect(e, eventKey) {
     e.preventDefault();
     switch (eventKey) {
     case 1: // react router handles redirecting to /about

@@ -1,6 +1,6 @@
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './rootReducer';
 /** The Store is the object that brings actions (that represent the facts about
 * “what happened”) and the reducers (that update the state according to those
@@ -24,5 +24,12 @@ const loggerMiddleware = createLogger();
 * asynchronously in response to each Promise. When the last middleware in the
 * chain dispatches an action, it has to be a plain object. This is when the
 * synchronous Redux data flow takes place. */
-const store = createStore(rootReducer, applyMiddleware(thunk, loggerMiddleware));
+/* eslint-disable no-underscore-dangle */
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  rootReducer,
+  /* preloadedState, */
+  composeEnhancers(applyMiddleware(thunk, loggerMiddleware)),
+);
+  /* eslint-enable */
 export default store;
