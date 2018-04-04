@@ -3,7 +3,9 @@ const loadSCSS = ({ include, exclude } = {}) => ({
     rules: [
       {
         test: /\.scss$/,
+        // eslint-disable-next-line object-shorthand
         include,
+        // eslint-disable-next-line object-shorthand
         exclude,
         // chain the the folowing loader to immediately apply all styles to the DOM
         use: [

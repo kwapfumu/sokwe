@@ -1,4 +1,6 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const cssnano = require('cssnano');
 
 const minifyCSS = ({ options }) => ({

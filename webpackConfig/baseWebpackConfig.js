@@ -1,6 +1,7 @@
 // const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackCdnPlugin = require('html-webpack-cdn-plugin');
+// const HtmlWebpackCdnPlugin = require('html-webpack-cdn-plugin');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const HtmlPlugin = require('html-webpack-plugin');
 // const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
@@ -48,7 +49,6 @@ const baseWebpackConfig = function baseWebpackConfig() {
     plugins: [
       new HtmlPlugin({
         title: 'Sokwe',
-        filename: 'index.html',
         template: '../sokwe/client/src/app/index.html',
         chunksSortMode: 'dependency',
         // alwaysWriteToDisk: true,
