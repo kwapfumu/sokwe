@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Row, ListGroup } from 'react-bootstrap';
-import fetchIbisokozoActionsCreators from '../../actions/ibisokozoActionsCreators/fetchIbisokozoActionsCreators';
+import { fetchIbisokozo } from '../../actions/ibisokozoActionsCreators/fetchIbisokozoActionsCreators';
 import adminGetIgisokozoByIdActionsCreators from '../../actions/adminIgisokozoActionsCreators/adminGetIgisokozoByIdActionsCreators';
 import adminDeleteIgisokozoActionsCreators from '../../actions/adminIgisokozoActionsCreators/adminDeleteIgisokozoActionsCreators';
 import AdminIgisokozoPanel from '../AdminIgisokozoPanel/AdminIgisokozoPanel';
@@ -13,7 +13,7 @@ class IbisokozoLayout extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchIbisokozoActionsCreators.fetchIbisokozo());
+    this.props.dispatch(fetchIbisokozo());
   }
 
   adminOpenEditSokozoForm(e, anId) {

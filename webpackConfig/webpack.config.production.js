@@ -1,9 +1,13 @@
 const path = require('path');
+// const glob = require("glob");
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
 // repeated conf options in both prod and dev environments
 const commonWebpackConfig = require('./baseWebpackConfig');
 // const exTractCss = require('./parts/extractCss');
+// const PATHS = {
+//  app: path.join(__dirname, '../client/dist/public'),
+// };
 const loadSCSS = require('./parts/loadSCSS');
 const loadImages = require('./parts/loadImages');
 const loadVideos = require('./parts/loadVideos');
@@ -34,6 +38,7 @@ const webpackConfigProd = function webpackConfigProd() { // env
     },
     generateSourceMaps({ type: 'source-map' }),
     // exTractCss({ use: ['css-loader', 'resolve-url-loader', 'sass-loader'] }),
+    // purifyCSS({ paths: glob.sync(`${PATHS.app}/**/*.js`, { nodir: true }) }),
     loadSCSS(),
     loadImages({
       options: {
