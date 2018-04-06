@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import * as types from '../../../constants/constants';
+import { ADD_IGISOKOZO_REQUEST, ADD_IGISOKOZO_SUCCESS, ADD_IGISOKOZO_ERROR } from '../../../constants/constants';
 import * as api from '../../../constants/ApiConstants';
 import fetchResponseHandlerFctr from '../../../reusableFunctions/fetchResponseHandler/fetchResponseHandlerFctr';
 
@@ -7,7 +7,7 @@ const adminAddIgisokozoActionsCreators = function adminAddIgisokozoActionsCreato
   return {
     addIgisokozoRequestActionCreator: function addIgisokozoRequestActionCreator() {
       return {
-        type: types.ADD_IGISOKOZO_REQUEST,
+        type: ADD_IGISOKOZO_REQUEST,
         payload: {
           isSaving: true,
         },
@@ -15,7 +15,7 @@ const adminAddIgisokozoActionsCreators = function adminAddIgisokozoActionsCreato
     },
     addedIgisokozoActionCreator: function addedIgisokozoActionCreator(json) {
       return {
-        type: types.ADD_IGISOKOZO_SUCCESS,
+        type: ADD_IGISOKOZO_SUCCESS,
         payload: {
           isSaving: false,
           // this might be in the wrong action creator re-think when not tired
@@ -25,7 +25,7 @@ const adminAddIgisokozoActionsCreators = function adminAddIgisokozoActionsCreato
     },
     addIgisokozoFailedActionCreator: function addIgisokozoFailedActionCreator() {
       return {
-        type: types.ADD_IGISOKOZO_ERROR,
+        type: ADD_IGISOKOZO_ERROR,
         payload: {
           isSaving: false,
         },

@@ -1,39 +1,10 @@
 import fetch from 'isomorphic-fetch';
-import * as types from '../../../constants/constants';
+import requestIbisokozo from '../../../isokoranye/actions/ibisokozoActionsCreators/requestIbisokozo';
 import * as api from '../../../constants/ApiConstants';
 import fetchResponseHandlerFctr from '../../../reusableFunctions/fetchResponseHandler/fetchResponseHandlerFctr';
+import receivedIbisokozo from '../../../isokoranye/actions/ibisokozoActionsCreators/receivedIbisokozo';
+import fetchIbisokozoFailed from '../../../isokoranye/actions/ibisokozoActionsCreators/fetchIbisokozoFailed';
 
-// ActionCreators are functions that create actions
-function requestIbisokozo() {
-  return {
-    type: types.FETCH_IBISOKOZO,
-    payload: {
-      isFetching: true,
-      didInvalidate: false,
-    },
-  };
-}
-
-function receivedIbisokozo(json) {
-  return {
-    type: types.FETCH_IBISOKOZO_SUCCESS,
-    payload: {
-      isFetching: false,
-      ibisokozo: json.data.children.map((child) => child.data),
-      // receivedAt: Date.now(),
-    },
-  };
-}
-
-function fetchIbisokozoFailed() {
-  return {
-    type: types.FETCH_IBISOKOZO_ERROR,
-    payload: {
-      isFetching: false,
-      didInvalidate: true,
-    },
-  };
-}
 /** Redux Thunk middleware allows you to write action creators that return a
 * function instead of an action. The thunk can be used to delay the dispatch
 * of an action, or to dispatch only if a certain condition is met.
@@ -45,7 +16,7 @@ function fetchIbisokozoFailed() {
 * thunk middleware will do the job for you, if the middleware see a normal action,
 * he will dispatch this action as normal action but if it's an async function
 * it will turn your async action/function into normal action. */
-function fetchIbisokozo() {
+export default function fetchIbisokozo() {
   // returns a function(that accepts `dispatch` so we can dispatch later)
   // instead of an action
   return (dispatch) => {
@@ -57,9 +28,7 @@ function fetchIbisokozo() {
       .catch((error) => {
         dispatch(fetchIbisokozoFailed());
         // eslint-disable-next-line no-console
-        console.log('Error fetching data', error);
+        console.log('Error fetching ibisokozo', error);
       });
   };
 }
-// eslint-disable-next-line object-shorthand
-export default { fetchIbisokozo };

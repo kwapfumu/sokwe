@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import update from 'immutability-helper';
 
 // Case reducer
-export default function deleteIgisokozoRequestReducer(ibisokozoState, action) {
-	let newIbisokozoState = update(ibisokozoState, { $merge: { action.payload } });
-	return newIbisokozoState;
-};
+export default function deleteIgisokozoRequestReducer(ibisokozoState, payload) {
+  const newIbisokozoState = update(ibisokozoState, { $merge: payload });
+  return newIbisokozoState;
+}

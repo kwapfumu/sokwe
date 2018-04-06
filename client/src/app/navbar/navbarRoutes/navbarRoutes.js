@@ -1,6 +1,6 @@
 import HomeLayout from '../../home/components/HomeLayout';
 import AboutLayout from '../../about/components/AboutLayout';
-// import LoginForm from '../../loginNsignup/components/LoginForm/LoginForm';
+import LoginForm from '../../loginNsignup/components/LoginForm/LoginForm';
 import AdminLayout from '../../admin/components/AdminLayout/AdminLayout';
 // import UrlNotFound from '../../reusableComponents/UrlNotFound/UrlNotFound';
 
@@ -17,12 +17,12 @@ const navbarRoutes = [
     exact: true,
     main: AboutLayout,
   },
-  // {
-  //   id: "second",
-  //   path: "/login",
-  //  exact: true,
-  //  main: LoginForm,
-  // },
+  {
+    id: "second",
+    path: "/login",
+    exact: true,
+    main: LoginForm,
+  },
   {
     id: "third",
     path: "/logout",

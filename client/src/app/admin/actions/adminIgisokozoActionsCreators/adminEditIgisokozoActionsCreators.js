@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import * as types from '../../../constants/constants';
+import { UPDATE_IGISOKOZO_REQUEST, UPDATE_IGISOKOZO_SUCCESS, UPDATE_IGISOKOZO_ERROR } from '../../../constants/constants';
 import * as api from '../../../constants/ApiConstants';
 import fetchResponseHandlerFctr from '../../../reusableFunctions/fetchResponseHandler/fetchResponseHandlerFctr';
 
@@ -7,36 +7,36 @@ const adminEditIgisokozoActionsCreators = function adminEditIgisokozoActionsCrea
   return {
     editIgisokozoRequestActionCreator: function editIgisokozoRequestActionCreator() {
       return {
-        type: types.UPDATE_IGISOKOZO_REQUEST,
+        type: UPDATE_IGISOKOZO_REQUEST,
         payload: {
-          isSaving: false,
+          isUpdating: true,
         },
       };
     },
     editedIgisokozoActionCreator: function editedIgisokozoRequestActionCreator() {
       return {
-        type: types.UPDATE_IGISOKOZO_SUCCESS,
+        type: UPDATE_IGISOKOZO_SUCCESS,
         payload: {
-          isSaving: false,
+          isUpdating: false,
         },
       };
     },
     editIgisokozoFailedActionCreator: function editIgisokozoFailedActionCreator() {
       return {
-        type: types.UPDATE_IGISOKOZO_ERROR,
+        type: UPDATE_IGISOKOZO_ERROR,
         payload: {
-          isSaving: false,
+          isUpdating: false,
         },
       };
     },
-    editIgisokozo: function editIgisokozo(sokozoId, aSokozo2Edit) {
+    editIgisokozo: function editIgisokozo(sokozoId, editedSokozo) {
       // returns a function(that accepts `dispatch` so we can dispatch later) instead of an action
       return (dispatch) => {
         dispatch(this.editIgisokozoRequestActionCreator());
         return fetch(`${api.API_URL}/admin/ibisokozo/:${sokozoId}/edit`, {
           method: 'POST',
           headers: api.API_HEADERS,
-          body: JSON.stringify(aSokozo2Edit),
+          body: JSON.stringify(editedSokozo),
         }).then((response) => fetchResponseHandlerFctr.checkHttpErrorStatus(response))
           .then((response) => response.json())
           .then((json) => dispatch(this.editedIgisokozoActionCreator(json)))

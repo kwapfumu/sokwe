@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import * as types from '../../../constants/constants';
+import { GET_IGISOKOZO_BYID, GET_IGISOKOZO_BYID_SUCCESS, GET_IGISOKOZO_BYID_ERROR } from '../../../constants/constants';
 import * as api from '../../../constants/ApiConstants';
 import fetchResponseHandlerFctr from '../../../reusableFunctions/fetchResponseHandler/fetchResponseHandlerFctr';
 
@@ -7,7 +7,7 @@ const adminGetIgisokozoByIdActionsCreators = function adminGetIgisokozoByIdActio
   return {
     requestIgisokozo: function requestIgisokozo() {
       return {
-        type: types.GET_IGISOKOZO_BYID,
+        type: GET_IGISOKOZO_BYID,
         payload: {
           isFetching: true,
         },
@@ -15,7 +15,7 @@ const adminGetIgisokozoByIdActionsCreators = function adminGetIgisokozoByIdActio
     },
     receivedIgisokozo: function receivedIgisokozo(json) {
       return {
-        type: types.GET_IGISOKOZO_BYID_SUCCESS,
+        type: GET_IGISOKOZO_BYID_SUCCESS,
         payload: {
           isFetching: false,
           aSokozo2Edit: json,
@@ -24,7 +24,7 @@ const adminGetIgisokozoByIdActionsCreators = function adminGetIgisokozoByIdActio
     },
     getIgisokozoFailed: function getIgisokozoFailed() {
       return {
-        type: types.GET_IGISOKOZO_BYID_ERROR,
+        type: GET_IGISOKOZO_BYID_ERROR,
         payload: {
           isFetching: false,
         },

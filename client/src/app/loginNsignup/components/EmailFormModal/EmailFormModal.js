@@ -16,7 +16,7 @@ class EmailFormModal extends Component {
   // const myAuth0 = auth0Fctr();
   componentDidMount() {}
 
-  handleEmailSubmit(e, anEmail) {
+  handleEmailSubmit(e) { // anEmail
     e.preventDefault();
     // sends an email with login code to the provided email address
     // myAuth0.sendEmail(anEmail);
@@ -33,24 +33,10 @@ class EmailFormModal extends Component {
 
   // handles the modal closing (when the user clicks outside the modal)
   handleClose() {
-    this.props.history.pushState(null,'/');
+    this.props.history.push('/');
   }
 
-
-	/* not needed 4 this login type or change it later
-	* const ErrorMsg = function ErrorMsg(){
-	*	if(err.status === 404){
-	*		return (
-	*			<Alert bsStyle="warning">
-	*				<strong>Ntubaho subira canke <LinkContainer to="signup">wiyandikishe!</LinkContainer></strong>
-	*			</Alert>
-	*		);
-	*	} else {
-	*		return null;
-	*	};
-	* }, */
-
-  render() {
+render() {
     return (
       <section>
         <Col xs={8} sm={8} md={8} lg={8}>

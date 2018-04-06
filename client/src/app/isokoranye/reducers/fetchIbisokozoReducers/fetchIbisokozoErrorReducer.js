@@ -2,8 +2,8 @@ import update from 'immutability-helper';
 import 'babel-polyfill';
 
 // Case reducer
-export default function fetchIbisokozoErrorReducer(fetchIbisokozoState, action) {
-	//sets isFetching: false,didInvalidate:true
-	let newFetchIbisokozoState = update(fetchIbisokozoState,{$merge:{action.payload}});
-	return newFetchIbisokozoState;
+export default function fetchIbisokozoErrorReducer(fetchIbisokozoState, payload) {
+  // sets isFetching: false
+  const newFetchIbisokozoState = update(fetchIbisokozoState, { $merge: payload });
+  return newFetchIbisokozoState;
 }

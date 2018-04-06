@@ -16,7 +16,7 @@ class EmailForm extends Component {
     // eslint-disable-next-line prefer-destructuring
     const length = this.state.email.length;
     // eslint-disable-next-line no-control-regex no-useless-escape
-   const emailPattern = new RegExp('/\b[a-z][a-z0-9._-]*@[a-z][a-z0-9_-]+\.[a-z]+(?:\.[a-z]+)?\b/ig');
+    const emailPattern = new RegExp('/\b[a-z][a-z0-9._-]*@[a-z][a-z0-9_-]+\.[a-z]+(?:\.[a-z]+)?\b/ig');
     if (length > 7 && this.state.email === emailPattern) {
       return 'success';
     }
@@ -41,7 +41,7 @@ class EmailForm extends Component {
       <FormGroup
         bsSize="small"
         controlId={id}
-        validationState={this.getValidationState()}
+        validationState={this.getValidationState(label)}
       >
         <Col sm={10}>
           <FormControl {...props} />

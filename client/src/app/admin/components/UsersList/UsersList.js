@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Col, ListGroup, ListGroupItem, ButtonToolbar, Button, Glyphicon } from 'react-bootstrap';
 import adminDeleteUserActionsCreators from '../../actions/userActionsCreators/adminDeleteUserActionsCreators';
-import fetchUsersActionsCreators from '../../actions/usersActionsCreators/fetchUsersActionsCreators';
+import fetchUsers from '../../actions/usersActionsCreators/fetchUsersActionsCreators';
 
 class UsersList extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -11,7 +11,7 @@ class UsersList extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchUsersActionsCreators.fetchUsers());
+    this.props.dispatch(fetchUsers());
   }
 
   render() {

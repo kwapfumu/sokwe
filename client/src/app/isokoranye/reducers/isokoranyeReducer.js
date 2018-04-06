@@ -6,7 +6,7 @@ import addIgisokozoReducer from './addIgisokozoReducers/addIgisokozoReducer';
 
 const isokoranyeReducer = combineReducers({
   getIgisokozoReducer: getIgisokozoReducer,
-  fetchIbisokozoReducer: fetchIbisokozoReducer,
+  ibisokozo: fetchIbisokozoReducer,
   currentUserReducer: currentUserReducer,
   addIgisokozoReducer: addIgisokozoReducer,
 });
