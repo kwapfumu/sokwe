@@ -46,27 +46,27 @@ import { addPlayedSokozoIdFailedReducer } from './addPlayedSokozoIdFailedReducer
 // },
 // ],
 // }
-export default function currentUserReducer(currentUserState = {
+export default function currentUserReducer(state = {
   isSaving: false,
   isFetching: false,
   currentUser: {},
 }, action) {
   switch (action.type) {
-  case 'ADD_IGISOKOZO_REQUEST': return addIgisokozoRequestReducer(currentUserState, action);
-  case 'ADD_IGISOKOZO_SUCCESS': return addIgisokozoSucessReducer(currentUserState, action);
-  case 'ADD_IGISOKOZO_ERROR': return addIgisokozoFailedReducer(currentUserState, action);
-  case 'ADD_PLAYEDSOKOZO_ID_REQUEST': return addPlayedSokozoIdRequestReducer(currentUserState, action);
-  case 'ADD_PLAYEDSOKOZO_ID_SUCCESS': return addPlayedSokozoIdSucessReducer(currentUserState, action);
-  case 'ADD_PLAYEDSOKOZO_ID_ERROR': return addPlayedSokozoIdFailedReducer(currentUserState, action);
-  case 'GET_CURRENT_USER': return getCurrentUserRequestReducer(currentUserState, action);
-  case 'GET_CURRENT_USER_SUCCESS': return getCurrentUserSuccessReducer(currentUserState, action);
-  case 'GET_CURRENT_USER_ERROR': return getCurrentUserErrorReducer(currentUserState, action);
-  case 'INCREMENT_USER_IBISOKOZOADDED_REQUEST': return incrementUserIbisokozoAddedRequestReducer(currentUserState, action);
-  case 'INCREMENT_USER_IBISOKOZOADDED__SUCCESS': return incrementUserIbisokozoAddedSuccessReducer(currentUserState, action);
-  case 'INCREMENT_USER_IBISOKOZOADDED_ERROR': return incrementUserIbisokozoAddedErrorReducer(currentUserState, action);
-  case 'INCREMENT_USER_SCORE_REQUEST': return incrementUserScoreRequestReducer(currentUserState, action);
-  case 'INCREMENT_USER_SCORE__SUCCESS': return incrementUserScoreSuccessReducer(currentUserState, action);
-  case 'INCREMENT_USER_SCORE_ERROR': return incrementUserScoreErrorReducer(currentUserState, action);
-  default: return currentUserState;
+  case 'ADD_IGISOKOZO_REQUEST': return addIgisokozoRequestReducer(state, action.payload);
+  case 'ADD_IGISOKOZO_SUCCESS': return addIgisokozoSucessReducer(state, action.payload);
+  case 'ADD_IGISOKOZO_ERROR': return addIgisokozoFailedReducer(state, action.payload);
+  case 'ADD_PLAYEDSOKOZO_ID_REQUEST': return addPlayedSokozoIdRequestReducer(state, action.payload);
+  case 'ADD_PLAYEDSOKOZO_ID_SUCCESS': return addPlayedSokozoIdSucessReducer(state, action.payload);
+  case 'ADD_PLAYEDSOKOZO_ID_ERROR': return addPlayedSokozoIdFailedReducer(state, action.payload);
+  case 'GET_CURRENT_USER': return getCurrentUserRequestReducer(state, action.payload);
+  case 'GET_CURRENT_USER_SUCCESS': return getCurrentUserSuccessReducer(state, action.payload);
+  case 'GET_CURRENT_USER_ERROR': return getCurrentUserErrorReducer(state, action.payload);
+  case 'INCREMENT_USER_IBISOKOZOADDED_REQUEST': return incrementUserIbisokozoAddedRequestReducer(state, action.payload);
+  case 'INCREMENT_USER_IBISOKOZOADDED__SUCCESS': return incrementUserIbisokozoAddedSuccessReducer(state, action.payload);
+  case 'INCREMENT_USER_IBISOKOZOADDED_ERROR': return incrementUserIbisokozoAddedErrorReducer(state, action.payload);
+  case 'INCREMENT_USER_SCORE_REQUEST': return incrementUserScoreRequestReducer(state, action.payload);
+  case 'INCREMENT_USER_SCORE__SUCCESS': return incrementUserScoreSuccessReducer(state, action.payload);
+  case 'INCREMENT_USER_SCORE_ERROR': return incrementUserScoreErrorReducer(state, action.payload);
+  default: return state;
   }
 }

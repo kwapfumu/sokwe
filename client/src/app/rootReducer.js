@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import adminFeaturesReducer from './admin/reducers/adminFeaturesReducers/adminFeaturesReducer';
+// import adminFeaturesReducer from './admin/reducers/adminFeaturesReducers/adminFeaturesReducer';
 import isokoranyeReducer from './isokoranye/reducers/isokoranyeReducer';
-
+import fetchIgisokozoByIdReducer from './admin/reducers/adminFeaturesReducers/fetchIgisokozoByIdReducers/fetchIgisokozoByIdReducer';
+import fetchIbisokozoReducer from './isokoranye/reducers/fetchIbisokozoReducers/fetchIbisokozoReducer';
+import igisokozoReducer from './admin/reducers/adminFeaturesReducers/igisokozoReducers/igisokozoReducer';
+import fetchUsersReducer from './admin/reducers/adminFeaturesReducers/fetchUsersReducers/fetchUsersReducer';
 /* First and foremost, it's important to understand that your entire application really only has one
 * single reducer function: the function that you've passed into createStore as the first argument.
 * That one single reducer function ultimately needs to do several things:
@@ -14,8 +17,12 @@ import isokoranyeReducer from './isokoranye/reducers/isokoranyeReducer';
 *   updated data and return those
 * - If no changes are needed, it should return the existing state as-is. */
 const rootReducer = combineReducers({
-  adminFeaturesReducer: adminFeaturesReducer,
+  // adminFeaturesReducer: adminFeaturesReducer,
+  aSokozo2Edit: fetchIgisokozoByIdReducer,
+  ibisokozo: fetchIbisokozoReducer,
+  igisokozo: igisokozoReducer,
   isokoranyeReducer: isokoranyeReducer,
+  users: fetchUsersReducer,
   form: formReducer,
 });
 
