@@ -55,19 +55,7 @@ class EmailForm extends Component {
   render() {
     return (
       <Form horizontal onSubmit={this.props.handleSubmit.bind(this)}>
-        <FormGroup bsSize="small">
-          <Alert bsStyle="warning">
-            <strong>Injiza email kugira tukurungikire muri email uruhusha rwo gutangura!</strong>
-          </Alert>
-        </FormGroup>
-        <FieldGroup
-          id="email"
-          type="email"
-          label="userEmail"
-          value={this.state.email}
-          placeholder="enter email"
-          onChange={this.handleChange.bind(this)}
-        />
+
         <FormGroup bsSize="small" controlId="buttonsRow">
           <Col sm={10}>
             <Button
