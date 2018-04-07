@@ -1,18 +1,18 @@
-import { getCurrentUserRequestReducer } from './getCurrentUserRequestReducer';
-import { getCurrentUserSuccessReducer } from './getCurrentUserSuccessReducer';
-import { getCurrentUserErrorReducer } from './getCurrentUserErrorReducer';
-import { incrementUserIbisokozoAddedRequestReducer } from './incrementUserIbisokozoAddedRequestReducer';
-import { incrementUserIbisokozoAddedSuccessReducer } from './incrementUserIbisokozoAddedSuccessReducer';
-import { incrementUserIbisokozoAddedErrorReducer } from './incrementUserIbisokozoAddedErrorReducer';
-import { incrementUserScoreRequestReducer } from './incrementUserScoreRequestReducer';
-import { incrementUserScoreSuccessReducer } from './incrementUserScoreSuccessReducer';
-import { incrementUserScoreErrorReducer } from './incrementUserScoreErrorReducer';
-import { addIgisokozoRequestReducer } from './addIgisokozoRequestReducer';
-import { addIgisokozoSucessReducer } from './addIgisokozoSucessReducer';
-import { addIgisokozoFailedReducer } from './addIgisokozoFailedReducer';
-import { addPlayedSokozoIdRequestReducer } from './addPlayedSokozoIdRequestReducer';
-import { addPlayedSokozoIdSucessReducer } from './addPlayedSokozoIdSucessReducer';
-import { addPlayedSokozoIdFailedReducer } from './addPlayedSokozoIdFailedReducer';
+import getCurrentUserRequestReducer from './getCurrentUserRequestReducer';
+import getCurrentUserSuccessReducer from './getCurrentUserSuccessReducer';
+import getCurrentUserErrorReducer from './getCurrentUserErrorReducer';
+import incrementUserIbisokozoAddedRequestReducer from './incrementUserIbisokozoAddedRequestReducer';
+import incrementUserIbisokozoAddedSuccessReducer from './incrementUserIbisokozoAddedSuccessReducer';
+import incrementUserIbisokozoAddedErrorReducer from './incrementUserIbisokozoAddedErrorReducer';
+import incrementUserScoreRequestReducer from './incrementUserScoreRequestReducer';
+import incrementUserScoreSuccessReducer from './incrementUserScoreSuccessReducer';
+import incrementUserScoreErrorReducer from './incrementUserScoreErrorReducer';
+import addIgisokozoRequestReducer from './addIgisokozoRequestReducer';
+import addIgisokozoSucessReducer from './addIgisokozoSucessReducer';
+import addIgisokozoFailedReducer from './addIgisokozoFailedReducer';
+import addPlayedSokozoIdRequestReducer from './addPlayedSokozoIdRequestReducer';
+import addPlayedSokozoIdSucessReducer from './addPlayedSokozoIdSucessReducer';
+import addPlayedSokozoIdFailedReducer from './addPlayedSokozoIdFailedReducer';
 
 /* slice reducer: a reducer that is being used to handle updates to one specific slice of
 * the state tree */

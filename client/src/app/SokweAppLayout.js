@@ -17,6 +17,14 @@ class SokweAppLayout extends Component {
     };
   }
 
+  setIsLoggedInTrue() {
+    this.setState({ isLoggedIn: true });
+  }
+
+  setIsAdminTrue() {
+    this.setState({ isAdmin: true });
+  }
+
   render() {
     return (
       <div className="sokweAppContainer">
@@ -31,6 +39,8 @@ class SokweAppLayout extends Component {
         <ContentDisplayArea
           isAdmin={this.state.isAdmin}
           isLoggedIn={this.state.isLoggedIn}
+          setIsLoggedInTrue={this.setIsLoggedInTrue.bind(this)}
+          setIsAdminTrue={this.setIsAdminTrue.bind(this)}
         />
         {/* /<ErrorBoundary> */}
         <FooterSokwe />

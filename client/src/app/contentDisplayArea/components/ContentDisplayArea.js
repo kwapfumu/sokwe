@@ -6,7 +6,7 @@ import AdminLayout from '../../admin/components/AdminLayout/AdminLayout';
 // import HomeLayout from '../../home/components/HomeLayout';
 // import AboutLayout from '../../about/components/AboutLayout';
 import navbarRoutes from '../../navbar/navbarRoutes/navbarRoutes';
-// import LoginForm from '../../loginNsignup/components/LoginForm/LoginForm';
+import LoginContainer from '../../loginNsignup/containers/LoginContainer';
 
 
 // renders either HomeLayout or AdminLayout or any loggedin user component
@@ -26,8 +26,11 @@ const ContentDisplayArea = (props) => {
         // eslint-disable-next-line react/no-array-index-key
         <Route key={id} path={route.path} exact={route.exact} component={route.main} />
       ))}
-      {/* eslint-disable-next-line react/jsx-no-bind
-      <Route path="/login" render={(props) => <LoginForm {...props} />} /> */}
+      <Route
+        path="/login"
+        // eslint-disable-next-line react/jsx-no-bind, max-len, no-shadow
+        render={(props) => <LoginContainer setIsAdminTrue={props.setIsAdminTrue} setIsLoggedInTrue={props.setIsLoggedInTrue} />}
+      />
     </div>
   );
 };
@@ -35,6 +38,8 @@ const ContentDisplayArea = (props) => {
 ContentDisplayArea.propTypes = {
   isAdmin: PropTypes.bool.isRequired,
   isLoggedIn: PropTypes.bool.isRequired,
+  setIsAdminTrue: PropTypes.func.isRequired,
+  setIsLoggedInTrue: PropTypes.func.isRequired,
 };
 
 export default ContentDisplayArea;

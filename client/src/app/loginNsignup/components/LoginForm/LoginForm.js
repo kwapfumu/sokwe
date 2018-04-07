@@ -1,54 +1,60 @@
-// import React, { Component } from 'react';
-// import { Grid, Row, Col, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
-// import loginByEmail from '../../coolReusableFunctions/customLogin/loginByEmail';
-// import PropTypes from 'prop-types';
-// import EmailFormModal from '../EmailFormModal/EmailFormModal';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Grid, Row, Col, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+import getCurrentUser from '../../../isokoranye/actions/currentUserActionsCreators/currentUserActionsCreators';
 
-// componentDidMount() {
-//  this.setState({ showModal: true });
-// }
+class LoginForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loginEmail: ' ',
+    };
+  }
 
-// closeEmailFormModal() {
-// this.setState({ showModal: false });
-// change the url without reloading
-// this.props.history.push('/');
-// }
+  handleChange(e) {
+    e.preventDefault();
+    this.setState({ loginEmail: e.target.value });
+  }
 
-// render() {
-//  return (
-//       {/* <EmailFormModal
-//        modalTitle="Login"
-//        emailFormButtonText="Login"
-//        showModal={this.state.showModal}
-//        closeEmailFormModal={this.closeEmailFormModal.bind(this)}
-//      /> */}
-// class LoginForm extends Component {
-//  constructor(props){
-//    super(props);
-//  }
-//  handleSubmit(e) {
-//   e.preventDefault();
-//   loginByEmail(anEmail);
-//  }
-//  render() {
-//    return (
-//      <Grid>
-//        <Row>
-//          <Col xsOffset={1} smOffset={2} mdOffset={4} lgOffset={4}>
-//            <Form inline onSubmit={this.handleSubmit.bind(this)}>
-//              <FormGroup controlId="formInlineEmail">
-//                <FormControl type="email" placeholder="injiza email" />
-//              </FormGroup>{' '}
-//              <Button type="submit">Login</Button>
-//            </Form>
-//          </Col>
-//        </Row>
-//      </Grid>
-//    );
-//  }
-// };
+  handleSubmit(e) {
+    e.preventDefault();
+    // const anEmail = ;
+    this.props.dispatch(getCurrentUser(this.state.loginEmail));
+    if (this.props.getState().currentUser === null) {
+      return;
+    }
+    this.props.setIsLoggedInTrue();
+    if (this.props.getState().currentUser.userRole === "admin") {
+      this.props.setIsAdminTrue();
+    }
+  }
 
-
-// LoginForm.propTypes = {};
-
-// export default LoginForm;
+  render() {
+    return (
+      <Grid>
+        <Row>
+          <Col xsOffset={1} smOffset={2} mdOffset={4} lgOffset={4}>
+            <Form inline onSubmit={this.handleSubmit.bind(this)}>
+              <FormGroup controlId="formInlineEmail">
+                <FormControl
+                  type="email"
+                  placeholder="injiza email"
+                  value={this.state.loginEmail}
+                  onChange={this.handleChange.bind(this)}
+                />
+              </FormGroup>{' '}
+              <Button type="submit">Login</Button>
+            </Form>
+          </Col>
+        </Row>
+      </Grid>
+    );
+  }
+}
+LoginForm.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  getState: PropTypes.func.isRequired,
+  setIsAdminTrue: PropTypes.func.isRequired,
+  setIsLoggedInTrue: PropTypes.func.isRequired,
+};
+export default LoginForm;

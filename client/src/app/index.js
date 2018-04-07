@@ -10,5 +10,3 @@ import SokweRoutes from './SokweRoutes/SokweRoutes';
 
 // pass the Router component with some routes to React DOM render method
 render(<Provider store={store}><SokweRoutes /></Provider>, document.getElementById('sokweApp'));
-
-// render(<SokweRoutes />, document.getElementById('sokweApp'));

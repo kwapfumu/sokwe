@@ -2,9 +2,9 @@ import update from 'immutability-helper';
 import 'babel-polyfill';
 
 // Case reducer
-export default function incrementUserIbisokozoAddedRequestReducer(currentUserState, action) {
+export default function incrementUserIbisokozoAddedRequestReducer(currentUserState, payload) {
   // sets isSaving: true
   // eslint-disable-next-line max-len
-  const newCurrentUserState = update(currentUserState, { isSaving: { $set: action.payload.isSaving } });
+  const newCurrentUserState = update(currentUserState, { isSaving: { $set: payload.isSaving } });
   return newCurrentUserState;
 }

@@ -3,48 +3,46 @@ import { GET_CURRENT_USER, GET_CURRENT_USER_SUCCESS, GET_CURRENT_USER__ERROR } f
 import * as api from '../../../constants/ApiConstants';
 import fetchResponseHandlerFctr from '../../../reusableFunctions/fetchResponseHandler/fetchResponseHandlerFctr';
 
-const currentUserActionsCreators = function currentUserActionsCreators() {
+const requestCurrentUser = function requestCurrentUser() {
   return {
-    requestCurrentUser: function requestCurrentUser() {
-      return {
-        type: GET_CURRENT_USER,
-        payload: {
-          isFetching: true,
-        },
-      };
-    },
-    receivedCurrentUser: function receivedCurrentUser(json) {
-      return {
-        type: GET_CURRENT_USER_SUCCESS,
-        payload: {
-          isFetching: false,
-          currentUser: json,
-        },
-      };
-    },
-    getCurrentUserFailed: function getCurrentUserFailed() {
-      return {
-        type: GET_CURRENT_USER__ERROR,
-        payload: {
-          isFetching: false,
-        },
-      };
-    },
-    getCurrentUser: function getCurrentUser() {
-      // returns a function(that accepts `dispatch` so we can dispatch later) instead of an action
-      return (dispatch) => {
-        dispatch(this.requestCurrentUser());
-        return fetch(`${api.API_URL}/:email`, { headers: api.API_HEADERS })
-          .then((response) => fetchResponseHandlerFctr.checkHttpErrorStatus(response))
-          .then((response) => response.json())
-          .then((json) => dispatch(this.receivedCurrentUser(json)))
-          .catch((error) => {
-            dispatch(this.getCurrentUserFailed());
-            // eslint-disable-next-line no-console
-            console.log('Error fetching current user', error);
-          });
-      };
+    type: GET_CURRENT_USER,
+    payload: {
+      isFetching: true,
     },
   };
 };
-export default currentUserActionsCreators;
+const receivedCurrentUser = function receivedCurrentUser(json) {
+  return {
+    type: GET_CURRENT_USER_SUCCESS,
+    payload: {
+      isFetching: false,
+      currentUser: json,
+    },
+  };
+};
+const getCurrentUserFailed = function getCurrentUserFailed() {
+  return {
+    type: GET_CURRENT_USER__ERROR,
+    payload: {
+      isFetching: false,
+    },
+  };
+};
+const getCurrentUser = function getCurrentUser(anEmail) {
+  // returns a function(that accepts `dispatch` so we can dispatch later) instead of an action
+  return (dispatch) => {
+    dispatch(requestCurrentUser());
+    return fetch(`${api.API_URL}/:${anEmail}`, { headers: api.API_HEADERS })
+      .then((response) => fetchResponseHandlerFctr.checkHttpErrorStatus(response))
+      .then((response) => response.json())
+      .then((json) => dispatch(receivedCurrentUser(json)))
+      .catch((error) => {
+        dispatch(getCurrentUserFailed());
+        // eslint-disable-next-line no-console
+        console.log('Error fetching current user', error);
+      });
+  };
+};
+
+
+export default getCurrentUser;
