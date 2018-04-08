@@ -4,12 +4,12 @@ import SokweAppLayout from './SokweAppLayout';
 // eslint-disable-next-line
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentUser: state.currentUser,
+    // currentUser: state.currentUserReducer.currentUser,
   };
 };
 // eslint-disable-next-line
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return {};
+  return { };
 };
 const SokweAppContainer = withRouter(connect(mapStateToProps, mapDispatchToProps)(SokweAppLayout));
 export default SokweAppContainer;

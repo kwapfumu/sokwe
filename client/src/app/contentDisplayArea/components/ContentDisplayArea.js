@@ -28,6 +28,8 @@ const ContentDisplayArea = (props) => {
       ))}
       <Route
         path="/login"
+        // eslint-disable-next-line react/jsx-boolean-value
+        exact={true}
         // eslint-disable-next-line react/jsx-no-bind, max-len, no-shadow
         render={(props) => <LoginContainer setIsAdminTrue={props.setIsAdminTrue} setIsLoggedInTrue={props.setIsLoggedInTrue} />}
       />

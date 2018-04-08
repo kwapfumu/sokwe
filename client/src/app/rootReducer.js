@@ -19,12 +19,12 @@ import fetchUsersReducer from './admin/reducers/adminFeaturesReducers/fetchUsers
 * - If no changes are needed, it should return the existing state as-is. */
 const rootReducer = combineReducers({
   // adminFeaturesReducer: adminFeaturesReducer,
-  aSokozo2Edit: fetchIgisokozoByIdReducer,
-  currentUser: currentUserReducer,
-  ibisokozo: fetchIbisokozoReducer,
-  igisokozo: igisokozoReducer,
+  fetchIgisokozoByIdReducer: fetchIgisokozoByIdReducer,
+  currentUserReducer: currentUserReducer,
+  ibisokozofetchIbisokozoReducer: fetchIbisokozoReducer,
+  igisokozoReducer: igisokozoReducer,
   isokoranyeReducer: isokoranyeReducer,
-  users: fetchUsersReducer,
+  fetchUsersReducer: fetchUsersReducer,
   form: formReducer,
 });
 

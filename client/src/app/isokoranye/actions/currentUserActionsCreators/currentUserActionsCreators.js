@@ -1,6 +1,12 @@
+// eslint-disable-next-line
+require('es6-promise').polyfill();
+// eslint-disable-next-line import/first
 import fetch from 'isomorphic-fetch';
+// eslint-disable-next-line import/first
 import { GET_CURRENT_USER, GET_CURRENT_USER_SUCCESS, GET_CURRENT_USER__ERROR } from '../../../constants/constants';
-import * as api from '../../../constants/ApiConstants';
+// eslint-disable-next-line import/first
+import { API_URL } from '../../../constants/ApiConstants';
+// eslint-disable-next-line import/first
 import fetchResponseHandlerFctr from '../../../reusableFunctions/fetchResponseHandler/fetchResponseHandlerFctr';
 
 const requestCurrentUser = function requestCurrentUser() {
@@ -32,7 +38,7 @@ const getCurrentUser = function getCurrentUser(anEmail) {
   // returns a function(that accepts `dispatch` so we can dispatch later) instead of an action
   return (dispatch) => {
     dispatch(requestCurrentUser());
-    return fetch(`${api.API_URL}/:${anEmail}`, { headers: api.API_HEADERS })
+    return fetch(`${API_URL}/:${anEmail}`, { headers: { Accept: 'application/json' } })
       .then((response) => fetchResponseHandlerFctr.checkHttpErrorStatus(response))
       .then((response) => response.json())
       .then((json) => dispatch(receivedCurrentUser(json)))
