@@ -25,6 +25,7 @@
     ]
   },
   "dependencies": {
+    "auth0-js": "^9.4.2",
     "babel-polyfill": "*",
     "bcryptjs": "*",
     "body-parser": "*",
@@ -123,6 +124,7 @@
     "style-loader": "^0.20.2",
     "uglifyjs-webpack-plugin": "^1.2.4",
     "url-loader": "*",
+    "webpack-bundle-analyzer": "^2.11.1",
     "webpack-cli": "^2.0.12",
     "webpack-dev-middleware": "^3.0.1",
     "webpack-dev-server": "^3.1.1",

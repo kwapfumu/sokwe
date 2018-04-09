@@ -6,8 +6,9 @@ const HtmlPlugin = require('html-webpack-plugin');
 // const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 // const cdnConfig = {
-// host: "https://maxcdn.bootstrapcdn.com",
+// host: ["https://cdn.auth0.com", "https://maxcdn.bootstrapcdn.com"],
 // cdn: {
+// js: "https://cdn.auth0.com/js/auth0/9.3.1/auth0.min.js",
 // css: "https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css",
 // },
 // };

@@ -21,7 +21,7 @@ const rootReducer = combineReducers({
   // adminFeaturesReducer: adminFeaturesReducer,
   fetchIgisokozoByIdReducer: fetchIgisokozoByIdReducer,
   currentUserReducer: currentUserReducer,
-  ibisokozofetchIbisokozoReducer: fetchIbisokozoReducer,
+  fetchIbisokozoReducer: fetchIbisokozoReducer,
   igisokozoReducer: igisokozoReducer,
   isokoranyeReducer: isokoranyeReducer,
   fetchUsersReducer: fetchUsersReducer,

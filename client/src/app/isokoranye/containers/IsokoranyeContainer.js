@@ -8,8 +8,8 @@ import IsokoranyeLayout from '../components/IsokoranyeLayout/IsokoranyeLayout';
 // eslint-disable-next-line
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentUser: state.currentUser,
-    ibisokozo: state.ibisokozo,
+    currentUser: state.currentUserReducer.currentUser,
+    ibisokozo: state.fetchIbisokozoReducer.ibisokozo,
     aSokozo: aSokozoSelector(state),
   };
 };

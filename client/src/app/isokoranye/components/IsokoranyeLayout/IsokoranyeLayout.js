@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Grid, Row, Col } from 'react-bootstrap';
 import Sokoranya from '../Sokoranya/Sokoranya';
 import StatsNuserScore from '../StatsNuserScore/StatsNuserScore';
-import fetchIbisokozoActionsCreators from '../../actions/ibisokozoActionsCreators/fetchIbisokozoActionsCreators';
+import fetchIbisokozo from '../../actions/ibisokozoActionsCreators/fetchIbisokozoActionsCreators';
 
 class IsokoranyeLayout extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class IsokoranyeLayout extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchIbisokozoActionsCreators.fetchIbisokozo());
+    this.props.dispatch(fetchIbisokozo());
   }
 
   toggleShowAddIgisokozoForm() {
