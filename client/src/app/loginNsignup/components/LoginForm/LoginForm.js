@@ -61,12 +61,12 @@ class LoginForm extends Component {
   render() {
     return (
       <Grid>
-        <Row>
-          <Col xsOffset={1} smOffset={2} mdOffset={3} lgOffset={3}>
+        <Row className="loginFormRow">
+          <Col xsOffset={1} smOffset={2} mdOffset={3} lgOffset={3} xs={10} sm={10} md={8} lg={8}>
             <Form inline onSubmit={this.handleEmailSubmit.bind(this)}>
               <Row>
                 <FormGroup bsSize="small">
-                  <Alert bsStyle="warning">
+                  <Alert bsStyle="warning" bsSize="small">
                     {/* eslint-disable-next-line max-len */}
                     <strong>Injiza email kugira tukurungikire muri email uruhusha rwo gutangura!</strong>
                   </Alert>
@@ -74,17 +74,21 @@ class LoginForm extends Component {
               </Row>
               {/* email form row */}
               <Row>
-                <FormGroup controlId="formInlineEmail">
-                  <FormControl
-                    type="email"
-                    placeholder="injiza email"
-                    value={this.state.loginEmail}
-                    onChange={this.handleEmailChange.bind(this)}
-                  />
-                </FormGroup>{' '}
-                <Button type="submit" bsSize="small">Ndungikira</Button>
+                {/* eslint-disable-next-line max-len */}
+                <Col xsOffset={1} smOffset={1} mdOffset={1} lgOffset={1} xs={10} sm={10} md={8} lg={8}>
+                  <FormGroup controlId="formInlineEmail">
+                    <FormControl
+                      type="email"
+                      placeholder="injiza email"
+                      value={this.state.loginEmail}
+                      onChange={this.handleEmailChange.bind(this)}
+                    />
+                  </FormGroup>{' '}
+                  <Button type="submit" bsSize="small">Ndungikira</Button>
+                </Col>
               </Row>
               {/* code form row */}
+              {' '}
               <CodeForm
                 handleCodeSubmit={this.handleCodeSubmit.bind(this)}
                 handleLoginCodeChange={this.handleLoginCodeChange.bind(this)}

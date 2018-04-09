@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Alert, Form, FormGroup, FormControl, Button, HelpBlock, Col } from 'react-bootstrap';
+import '../../scss/loginForm.scss';
 
 /* contain a form (that needs to be flexible enough to be used blank or pre-filled
 * with existing card values.) and an overlay. The form will appear as a modal on top
@@ -11,43 +12,37 @@ const CodeForm = (props) => {
     return null;
   }
   return (
-    <Form inline onSubmit={props.handleCodeSubmit}>
-      <Row>
-        <FormGroup bsSize="small">
-          <Alert bsStyle="warning">
-            <strong>Enter the code sent to your email to login!</strong>
-          </Alert>
-        </FormGroup>
-      </Row>
-      <Row>
-        <FormGroup
-          bsSize="small"
-          controlId="formInlineCode"
-          validationState={props.getCodeValidationState()}
-        >
-          <Col sm={10}>
-            <FormControl
-              type="password"
-              value={props.loginCode}
-              placeholder="enter code"
-              onChange={props.handleLoginCodeChange}
-            />
-          </Col>
-          <FormControl.Feedback />
-          <HelpBlock>{props.help}</HelpBlock>
-        </FormGroup>{' '}
-        <FormGroup bsSize="small" controlId="buttonsRow">
-          <Col sm={10}>
-            <Button
-              type="submit"
-              bsStyle="warning"
+    <Row className="loginFormRow">
+      <Form inline onSubmit={props.handleCodeSubmit}>
+        <Row>
+          <FormGroup bsSize="small">
+            <Alert bsStyle="warning" bsSize="small">
+              <strong>Injiza ibiharuro waronse muri email!</strong>
+            </Alert>
+          </FormGroup>
+        </Row>
+        <Row>
+          {/* eslint-disable-next-line max-len */}
+          <Col xsOffset={1} smOffset={1} mdOffset={1} lgOffset={1} xs={10} sm={10} md={8} lg={8}>
+            <FormGroup
+              bsSize="small"
+              controlId="formInlineCode"
+              validationState={props.getCodeValidationState()}
             >
-              Login
-            </Button>
+              <FormControl
+                type="password"
+                value={props.loginCode}
+                placeholder="enter code"
+                onChange={props.handleLoginCodeChange}
+              />
+              <FormControl.Feedback />
+              <HelpBlock>{props.help}</HelpBlock>
+            </FormGroup>{' '}
+            <Button type="submit" bsStyle="warning" bsSize="small">Twagiye</Button>
           </Col>
-        </FormGroup>
-      </Row>
-    </Form>
+        </Row>
+      </Form>
+    </Row>
   );
 };
 
