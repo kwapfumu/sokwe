@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col, Well, Button } from 'react-bootstrap';
-import getIgisokozoActionsCreators from '../../actions/igisokozoActionsCreators/getIgisokozoActionsCreators';
 import StartMsg from './StartMsg';
 import SokweMsg from './SokweMsg';
 import IgisokozoDisplay from './IgisokozoDisplay';
@@ -11,10 +10,15 @@ class NiruzeDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: false,
       showStartMsg: false,
       showSokweMsg: false,
-      showNiruzeMsg: false,
+      // showNiruzeMsg: false,
     };
+  }
+
+  componentDidMount() {
+    this.setState({ showStartMsg: true });
   }
 
   handleTanguraClick(e) {
@@ -29,10 +33,6 @@ class NiruzeDisplay extends Component {
     e.stopPropagation();
     // sets displayIgisokozo:true
     this.props.showIgisokozo();
-  }
-
-  componentDidMount() {
-    this.setState({ showStartMsg: true });
   }
 
   render() {
@@ -71,10 +71,10 @@ class NiruzeDisplay extends Component {
               <Button
                 bsStyle="primary"
                 bsSize="small"
-                disabled={isLoading}
-                onClick={!isLoading ? this.handleTanguraClick.bind(this) : null}
+                disabled={this.state.isLoading}
+                onClick={!this.state.isLoading ? this.handleTanguraClick.bind(this) : null}
               >
-                {isLoading ? 'Loading' : 'Tangura'}
+                {this.state.isLoading ? 'Loading' : 'Tangura'}
               </Button>
             </p>
           </Col>
@@ -83,10 +83,10 @@ class NiruzeDisplay extends Component {
               <Button
                 bsStyle="primary"
                 bsSize="small"
-                disabled={isLoading}
-                onClick={!isLoading ? this.handleNiruzeClick.bind(this) : null}
+                disabled={this.state.isLoading}
+                onClick={!this.state.isLoading ? this.handleNiruzeClick.bind(this) : null}
               >
-                {isLoading ? 'Loading' : Niruze}
+                {this.state.isLoading ? 'Loading' : 'Niruze'}
               </Button>
             </p>
           </Col>
@@ -99,7 +99,6 @@ class NiruzeDisplay extends Component {
 
 NiruzeDisplay.propTypes = {
   aSokozo: PropTypes.object.isRequired,
-  dispatch: PropTypes.func.isRequired,
   displayIgisokozo: PropTypes.bool.isRequired,
   displayInyishu: PropTypes.bool.isRequired,
   showIgisokozo: PropTypes.func.isRequired,
