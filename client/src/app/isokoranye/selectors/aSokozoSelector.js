@@ -6,7 +6,7 @@ import addPlayedSokozoId from '../actions/currentUserActionsCreators/addPlayedSo
 // input-selectors i.e. do not modify the state
 const ibisokozoSelector = (state) => state.fetchIbisokozoReducer.ibisokozo;
 const playedSokozosSelector = (state) => state.currentUserReducer.currentUser.playedSokozosIds;
-
+// eslint-disable-next-line consistent-return
 const getAsokozo = function getAsokozo(ibisokozo, playedSokozosIds) {
   let aSokozo = {};
   if (playedSokozosIds.length === 0) {
@@ -14,18 +14,18 @@ const getAsokozo = function getAsokozo(ibisokozo, playedSokozosIds) {
     return aSokozo;
   }
   // iterates over ibisokozo array to check if each sokozo has been played before
+  // eslint-disable-next-line consistent-return
   ibisokozo.forEach((sokozo) => {
-    // if already played keep searching/iterating
-    if (_.includes(playedSokozosIds,sokozo._id)) {
-      continue;
-    } else { // if not already played return sokozo
+    // if not already played return sokozo
+    // eslint-disable-next-line no-underscore-dangle
+    if (_.includes(playedSokozosIds, sokozo._id) === false) {
       Object.assign(aSokozo, sokozo);
       // add id to playedSokozosIds and persist
+      // eslint-disable-next-line no-underscore-dangle
       dispatch(addPlayedSokozoId(sokozo._id));
-        return aSokozo;
-      }
-    });
-  }
+      return aSokozo;
+    }
+  });
 };
 // memoized selector takes input selectors and a transform function that
 // calculates the aSokozo State

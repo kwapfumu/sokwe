@@ -29,7 +29,7 @@ const renderField = ({ input, label, type, meta: { touched, error, warning } }) 
     </div>
   </div>
 );
-
+// eslint-disable-next-line import/no-mutable-exports
 let AddIgisokozoForm = (props) => (
   <form id="addIgisokozoForm" onSubmit={props.handleSubmit.bind(this)}>
     <div className="Row">
@@ -59,7 +59,7 @@ let AddIgisokozoForm = (props) => (
       <p>
         <button
           type="submit"
-          disabled={submitting}
+          disabled={props.pristine || props.submitting}
           id="ongeramwoButton"
           className="col-md-offset-4 col-md-1"
         >
@@ -67,8 +67,8 @@ let AddIgisokozoForm = (props) => (
         </button>
         <button
           type="button"
-          disabled={pristine || submitting}
-          onClick={reset}
+          disabled={props.pristine || props.submitting}
+          onClick={props.reset}
         >
           Futa vyose
         </button>
@@ -80,6 +80,9 @@ let AddIgisokozoForm = (props) => (
 
 AddIgisokozoForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  pristine: PropTypes.bool.isRequired,
+  submitting: PropTypes.bool.isRequired,
+  reset: PropTypes.func.isRequired,
 };
 
 // Creates a decorator with which you use redux-form to connect your form component to Redux.

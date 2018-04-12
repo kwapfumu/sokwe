@@ -7,6 +7,7 @@ const webAuth = new auth0.WebAuth({
   audience: 'https://kwapfumu.eu.auth0.com/userinfo',
   responseType: 'token id_token',
   scope: 'openid',
+  grant_type: 'implicit',
 });
 let aUserEmail = '';
 const currentUserMail = {};
@@ -46,7 +47,7 @@ const login = function login(aCode) {
   webAuth.passwordlessLogin({
     connection: 'email',
     email: aUserEmail,
-    verificationCode: aCode,
+    password: aCode,
     // eslint-disable-next-line func-names,prefer-arrow-callback, consistent-return
   }, function (err, res) {
     if (err) {

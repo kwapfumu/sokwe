@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
-import adminAddIgisokozoActionsCreators from '../../actions/adminIgisokozoActionsCreators/adminAddIgisokozoActionsCreators';
+import addIgisokozo from '../../actions/adminIgisokozoActionsCreators/adminAddIgisokozoActionsCreators';
 import { ongeramwoButton } from '../../../isokoranye/scss/ongeramwo.scss';
 
 const required = function required(value) {
@@ -22,12 +22,7 @@ const maxLength = function maxLength(max, value) {
   return undefined;
 };
 const maxLength35 = maxLength(35);
-const renderField = ({
-  input,
-  label,
-  type,
-  meta: { touched, error, warning },
-}) => (
+const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
   <div>
     <div>
       <input {...input} placeholder={label} type={type} className="input-xlarge col-md-5" />
@@ -39,7 +34,7 @@ const renderField = ({
 let AdminAddIgisokozoForm = (props) => {
   const handleSubmit = function handleSubmit(e, values) {
     e.preventDefault();
-    props.dispatch(adminAddIgisokozoActionsCreators.addIgisokozo(values));
+    props.dispatch(addIgisokozo(values));
     props.history.push('/admin/ibisokozo');
     e.stopPropagation();
   };
