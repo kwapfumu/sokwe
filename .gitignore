@@ -9,3 +9,6 @@ node_modules/
 
 # server side till uploaded and running
 server/
+
+# auth related files
+client/src/app/loginNsignup/coolReusableFunctions/
