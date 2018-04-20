@@ -27,7 +27,6 @@ const CodeForm = (props) => {
             <FormGroup
               bsSize="small"
               controlId="formInlineCode"
-              validationState={props.getCodeValidationState()}
             >
               <FormControl
                 type="password"
@@ -50,7 +49,7 @@ CodeForm.propTypes = {
   handleCodeSubmit: PropTypes.func.isRequired,
   handleLoginCodeChange: PropTypes.func.isRequired,
   help: PropTypes.string.isRequired,
-  getCodeValidationState: PropTypes.func.isRequired,
+  // getCodeValidationState: PropTypes.func.isRequired,
   loginCode: PropTypes.number.isRequired,
   showCodeForm: PropTypes.bool.isRequired,
   // submitButtonText: PropTypes.string.isRequired,

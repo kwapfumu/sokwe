@@ -6,8 +6,7 @@ const webAuth = new auth0.WebAuth({
   redirectUri: 'http://localhost:3000/isokoranye',
   audience: 'https://kwapfumu.eu.auth0.com/userinfo',
   responseType: 'token id_token',
-  scope: 'openid',
-  grant_type: 'implicit',
+  scope: 'openid profile email',
 });
 let aUserEmail = '';
 const currentUserMail = {};
@@ -44,22 +43,21 @@ const setSession = function setSession(authResult) {
 
 const login = function login(aCode) {
   // Verify code sent via email
-  webAuth.passwordlessLogin({
+  webAuth.passwordlessVerify({
     connection: 'email',
+    verificationCode: aCode,
     email: aUserEmail,
-    password: aCode,
-    // eslint-disable-next-line func-names,prefer-arrow-callback, consistent-return
+    // eslint-disable-next-line func-names,prefer-arrow-callback
   }, function (err, res) {
     if (err) {
       // eslint-disable-next-line no-console
       return console.log(err);
-      // if (res.status >= 200 && res.status < 300) {
-      //  return res;
-      // }
-      // const error = new Error(res.statusText);
-      // error.response = res;
-      // throw error;
     }
+    // If successful, save the user's token and proceed
+    /* The passwordlessVerify method will verify the Passwordless transaction, then redirect
+    * the user back to the redirectUri that was set. You will then need to parse the URL hash
+    * in order to acquire the token, and then call the client.userInfo method to acquire your user's
+    * information */
     // eslint-disable-next-line no-console
     console.log(res);
     /* After authentication occurs, the parseHash method parses a URL hash
@@ -94,6 +92,7 @@ const login = function login(aCode) {
       // eslint-disable-next-line no-console
       return console.log(authResult);
     });
+    return currentUserMail;
   });
 };
 

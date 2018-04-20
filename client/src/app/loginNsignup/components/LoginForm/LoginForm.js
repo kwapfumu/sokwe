@@ -28,15 +28,13 @@ class LoginForm extends Component {
   // }
   // custom propValidator:todo=> refactor it when u less tired...
   getCodeValidationState() {
-    if (typeof this.state.loginCode !== 'number' || this.state.loginCode !== null) {
-      this.setState({ help: 'invalid code' });
+    if (typeof this.state.loginCode !== 'number' && this.state.loginCode !== null) {
+      this.setState({ help: 'invalid code! code should be a 6 digit code' });
       return 'error';
+    } else if (typeof this.state.loginCode === 'number' && this.state.loginCode.length === 6) {
+      return 'success';
     }
-    if (this.state.loginCode.length !== 6) {
-      this.setState({ help: 'code should be a 6 digit code' });
-      return 'error';
-    }
-    return 'success';
+    return null;
   }
 
   handleEmailChange(e) {
@@ -93,7 +91,7 @@ class LoginForm extends Component {
                 handleCodeSubmit={this.handleCodeSubmit.bind(this)}
                 handleLoginCodeChange={this.handleLoginCodeChange.bind(this)}
                 help={this.state.help}
-                getCodeValidationState={this.getCodeValidationState.bind(this)}
+                // getCodeValidationState={this.getCodeValidationState.bind(this)}
                 loginCode={this.state.loginCode}
                 showCodeForm={this.state.showCodeForm}
               />

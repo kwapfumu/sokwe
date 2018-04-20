@@ -22,10 +22,11 @@ const maxLength = function maxLength(max, value) {
   return undefined;
 };
 const maxLength35 = maxLength(35);
+// eslint-disable-next-line react/prop-types, object-curly-newline
 const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
   <div>
     <div>
-      <input {...input} placeholder={label} type={type} className="input-xlarge col-md-5" />
+      <input {...input} placeholder={label} type={type} className="input-xlarge col-md-5 isokoranyeGrayTheme" />
       {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
     </div>
   </div>
@@ -46,7 +47,6 @@ let AdminAddIgisokozoForm = (props) => {
           <Field
             name="igisokozo"
             id="igisokozo"
-            className="isokoranyeGrayTheme"
             type="text"
             component={renderField}
             label="igisokozo"
@@ -55,7 +55,7 @@ let AdminAddIgisokozoForm = (props) => {
           <Field
             name="inyishu"
             id="inyishu"
-            className="col-sm-offset-1 isokoranyeGrayTheme"
+            className="col-sm-offset-1"
             type="text"
             component={renderField}
             label="inyishu"

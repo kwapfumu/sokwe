@@ -21,6 +21,7 @@ const maxLength = function maxLength(max, value) {
   return undefined;
 };
 const maxLength35 = maxLength(35);
+// eslint-disable-next-line react/prop-types, object-curly-newline
 const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
   <div>
     <div>

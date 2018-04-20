@@ -53,12 +53,8 @@ const maxLength = function maxLength(max, value) {
   return undefined;
 };
 const maxLength35 = maxLength(35);
-const renderField = ({
-  input,
-  label,
-  type,
-  meta: { touched, error, warning }
-}) => (
+// eslint-disable-next-line react/prop-types, object-curly-newline
+const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
   <div>
     <div>
       <input {...input} placeholder={label} type={type} className="input-xlarge col-md-5" />
