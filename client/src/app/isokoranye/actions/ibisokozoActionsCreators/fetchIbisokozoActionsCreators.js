@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import requestIbisokozo from './requestIbisokozo';
-import * as api from '../../../constants/ApiConstants';
+import { API_URL, API_HEADERS } from '../../../constants/ApiConstants';
 import fetchResponseHandlerFctr from '../../../reusableFunctions/fetchResponseHandler/fetchResponseHandlerFctr';
 import receivedIbisokozo from './receivedIbisokozo';
 import fetchIbisokozoFailed from './fetchIbisokozoFailed';
@@ -20,7 +20,7 @@ export default function fetchIbisokozo() {
   // instead of an action
   return (dispatch) => {
     dispatch(requestIbisokozo());
-    return fetch(`${api.API_URL}/isokoranye`, { headers: api.API_HEADERS })
+    return fetch(`${API_URL}/isokoranye`, { headers: API_HEADERS })
       .then((response) => fetchResponseHandlerFctr.checkHttpErrorStatus(response))
       .then((response) => response.json())
       .then((json) => dispatch(receivedIbisokozo(json)))

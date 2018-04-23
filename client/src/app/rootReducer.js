@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 // import adminFeaturesReducer from './admin/reducers/adminFeaturesReducers/adminFeaturesReducer';
+import fetchValentinasMsgsReducer from './valentina/reducers/fetchValentinasMsgsReducers/fetchValentinasMsgsReducer';
 import isokoranyeReducer from './isokoranye/reducers/isokoranyeReducer';
 import fetchIgisokozoByIdReducer from './admin/reducers/adminFeaturesReducers/fetchIgisokozoByIdReducers/fetchIgisokozoByIdReducer';
 import currentUserReducer from './isokoranye/reducers/currentUserReducers/currentUserReducer';
@@ -19,6 +20,7 @@ import fetchUsersReducer from './admin/reducers/adminFeaturesReducers/fetchUsers
 * - If no changes are needed, it should return the existing state as-is. */
 const rootReducer = combineReducers({
   // adminFeaturesReducer: adminFeaturesReducer,
+  fetchValentinasMsgsReducer: fetchValentinasMsgsReducer,
   fetchIgisokozoByIdReducer: fetchIgisokozoByIdReducer,
   currentUserReducer: currentUserReducer,
   fetchIbisokozoReducer: fetchIbisokozoReducer,

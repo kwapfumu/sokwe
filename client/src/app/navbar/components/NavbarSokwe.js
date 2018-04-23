@@ -16,6 +16,9 @@ class NavbarSokwe extends Component {
   handleSelect(e, eventKey) {
     e.preventDefault();
     switch (eventKey) {
+    case 8: // react router handles redirecting to /valentina
+      this.setState({ selectedKey: eventKey });
+      break;
     case 1: // react router handles redirecting to /about
       this.setState({ selectedKey: eventKey });
       break;

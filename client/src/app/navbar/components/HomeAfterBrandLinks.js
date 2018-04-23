@@ -5,12 +5,14 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 
 const HomeAfterBrandLinks = () => (
-  <LinkContainer to="/about">
-    <NavItem eventKey={1}>About</NavItem>
-  </LinkContainer>
+  <div>
+    <LinkContainer to="/about">
+      <NavItem eventKey={1}>About</NavItem>
+    </LinkContainer>
+    <LinkContainer to="/valentina">
+      <NavItem eventKey={8}>Valentina</NavItem>
+    </LinkContainer>
+  </div>
 );
-// HomeAfterBrandLinks.propTypes = {
-  // selectedKey: PropTypes.number.isRequired,
-// };
 
 export default HomeAfterBrandLinks;
