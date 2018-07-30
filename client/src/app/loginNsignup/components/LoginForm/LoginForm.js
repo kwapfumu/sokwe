@@ -85,17 +85,17 @@ class LoginForm extends Component {
                   <Button type="submit" bsSize="small">Ndungikira</Button>
                 </Col>
               </Row>
-              {/* code form row */}
-              {' '}
-              <CodeForm
-                handleCodeSubmit={this.handleCodeSubmit.bind(this)}
-                handleLoginCodeChange={this.handleLoginCodeChange.bind(this)}
-                help={this.state.help}
-                // getCodeValidationState={this.getCodeValidationState.bind(this)}
-                loginCode={this.state.loginCode}
-                showCodeForm={this.state.showCodeForm}
-              />
             </Form>
+            {/* code form row */}
+            {' '}
+            <CodeForm
+              handleCodeSubmit={this.handleCodeSubmit.bind(this)}
+              handleLoginCodeChange={this.handleLoginCodeChange.bind(this)}
+              help={this.state.help}
+              // getCodeValidationState={this.getCodeValidationState.bind(this)}
+              loginCode={this.state.loginCode}
+              showCodeForm={this.state.showCodeForm}
+            />
           </Col>
         </Row>
       </Grid>

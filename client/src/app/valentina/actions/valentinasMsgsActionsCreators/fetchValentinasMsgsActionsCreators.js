@@ -37,7 +37,7 @@ export default function fetchValentinasMsgs() {
   // instead of an action
   return (dispatch) => {
     dispatch(requestValentinasMsgs());
-    return fetch(`${API_URL}/valentina`, { headers: API_HEADERS })
+    return fetch(`${API_URL}/valentina/`, { headers: API_HEADERS })
       .then((response) => fetchResponseHandlerFctr.checkHttpErrorStatus(response))
       .then((response) => response.json())
       .then((json) => dispatch(receivedValentinasMsgs(json)))

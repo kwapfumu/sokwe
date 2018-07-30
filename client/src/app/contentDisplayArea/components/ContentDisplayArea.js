@@ -8,7 +8,6 @@ import AdminLayout from '../../admin/components/AdminLayout/AdminLayout';
 import navbarRoutes from '../../navbar/navbarRoutes/navbarRoutes';
 import LoginContainer from '../../loginNsignup/containers/LoginContainer';
 
-
 // renders either HomeLayout or AdminLayout or any loggedin user component
 const ContentDisplayArea = (props) => {
   if (props.isLoggedIn === true && props.isAdmin === false) {

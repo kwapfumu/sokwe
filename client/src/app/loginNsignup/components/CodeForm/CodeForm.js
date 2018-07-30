@@ -12,14 +12,16 @@ const CodeForm = (props) => {
     return null;
   }
   return (
-    <Row className="loginFormRow">
+    <Row className="loginCodeFormRow">
       <Form inline onSubmit={props.handleCodeSubmit}>
         <Row>
-          <FormGroup bsSize="small">
-            <Alert bsStyle="warning" bsSize="small">
-              <strong>Injiza ibiharuro waronse muri email!</strong>
-            </Alert>
-          </FormGroup>
+          <Col xsOffset={1} smOffset={2} mdOffset={1} lgOffset={1} xs={10} sm={10} md={8} lg={8}>
+            <FormGroup bsSize="small">
+              <Alert bsStyle="warning" bsSize="small">
+                <strong>Injiza ibiharuro waronse muri email!</strong>
+              </Alert>
+            </FormGroup>
+          </Col>
         </Row>
         <Row>
           {/* eslint-disable-next-line max-len */}
@@ -37,7 +39,7 @@ const CodeForm = (props) => {
               <FormControl.Feedback />
               <HelpBlock>{props.help}</HelpBlock>
             </FormGroup>{' '}
-            <Button type="submit" bsStyle="warning" bsSize="small">Twagiye</Button>
+            <Button type="submit" bsSize="small">Twagiye</Button>
           </Col>
         </Row>
       </Form>

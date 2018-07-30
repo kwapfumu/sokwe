@@ -5,14 +5,9 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 
 const HomeAfterBrandLinks = () => (
-  <div>
-    <LinkContainer to="/about">
-      <NavItem eventKey={1}>About</NavItem>
-    </LinkContainer>
-    <LinkContainer to="/valentina">
-      <NavItem eventKey={8}>Valentina</NavItem>
-    </LinkContainer>
-  </div>
+  <LinkContainer to="/about">
+    <NavItem eventKey={1}>About</NavItem>
+  </LinkContainer>
 );
 
 export default HomeAfterBrandLinks;
