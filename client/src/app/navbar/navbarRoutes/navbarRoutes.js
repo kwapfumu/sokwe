@@ -1,6 +1,6 @@
 import HomeLayout from '../../home/components/HomeLayout';
 import AboutLayout from '../../about/components/AboutLayout';
-
+import IsokoranyeLayout from '../../isokoranyeHome/components/IsokoranyeLayoutt/IsokoranyeLayout';
 
 const navbarRoutes = [
   {
@@ -20,6 +20,12 @@ const navbarRoutes = [
     path: "/logout",
     exact: true,
     main: HomeLayout,
+  },
+  {
+    id: "third",
+    path: "/isokoranye",
+    exact: true,
+    main: IsokoranyeLayout,
   },
   // {
   //  id: "notFound",

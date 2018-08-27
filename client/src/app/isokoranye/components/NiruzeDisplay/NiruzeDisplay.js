@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col, Well, Button } from 'react-bootstrap';
+// import ErrorBoundary from '../../../reusableComponents/ErrorBoundary/ErrorBoundary';
 import StartMsg from './StartMsg';
 import SokweMsg from './SokweMsg';
 import IgisokozoDisplay from './IgisokozoDisplay';
@@ -42,24 +43,32 @@ class NiruzeDisplay extends Component {
         <Row>
           <Col mdOffset={1} lgOffset={1}>
             <Well className="isokoranyeGrayTheme">
+              {/* <ErrorBoundary> */}
               <StartMsg
                 startMsg="Amakuru? Tangura sha..."
                 showStartMsg={this.state.showStartMsg}
               />
+              {/* </ErrorBoundary> */}
+              {/* <ErrorBoundary> */}
               <SokweMsg
                 sokweMsg="Sokwe?"
                 showSokweMsg={this.state.showSokweMsg}
               />
+              {/* </ErrorBoundary> */}
               {/* <NiruzeMsg niruzeMsg="Niruze!"
               showNiruzeMsg={this.state.showNiruzeMsg}/> */}
+              {/* <ErrorBoundary> */}
               <IgisokozoDisplay
                 igisokozo={this.props.aSokozo.igisokozo}
                 displayIgisokozo={this.props.displayIgisokozo}
               />
+              {/* </ErrorBoundary> */}
+              {/* <ErrorBoundary> */}
               <InyishuDisplay
                 inyishu={this.props.aSokozo.inyishu}
                 displayInyishu={this.props.displayInyishu}
               />
+              {/* </ErrorBoundary> */}
             </Well>
           </Col>
         </Row>

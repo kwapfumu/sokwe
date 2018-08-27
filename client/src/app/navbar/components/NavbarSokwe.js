@@ -40,6 +40,9 @@ class NavbarSokwe extends Component {
     case 7: // react router handles redirecting to /logout
       this.setState({ selectedKey: eventKey });
       break;
+    case 8: // react router handles redirecting to /isokoranye on homepage
+      this.setState({ selectedKey: eventKey });
+      break;
     default:
       break;
     }
