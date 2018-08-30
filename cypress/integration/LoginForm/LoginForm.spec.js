@@ -11,8 +11,6 @@ describe('testing loginForm', () => {
 
   it('enters an email and clicks to submit it', () => {
     // eslint-disable-next-line no-undef
-    // cy.get('.loginFormRow').contains('injiza email');
-    // eslint-disable-next-line no-undef
     // cy.get('[data-test=email]').type('grr@gmail.com');
     // eslint-disable-next-line no-undef
     cy.get('.loginFormRow').contains('Button', 'Ndungikira').click();
