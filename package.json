@@ -17,7 +17,12 @@
     "cypress": "cypress open"
   },
   "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "verbose": true,
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/cypress/"
+    ],
+    "transform": { ".* ": "<rootDir>/node_modules/babel-jest" },
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/react-dom",
