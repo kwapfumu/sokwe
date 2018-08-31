@@ -12,9 +12,9 @@
     "client": "webpack-dev-server --env development --progress --colors --watch",
     "server": "nodemon --watch server/server.js --exec babel-node -- server/server",
     "test": "jest --coverage",
-    "test:watch": "yarn test -- --watch",
+    "testUnit": "yarn test -- --watch",
     "build": "webpack --env production --progress --profile --colors",
-    "cypress": "cypress open"
+    "testE2e": "cypress open"
   },
   "jest": {
     "verbose": true,
