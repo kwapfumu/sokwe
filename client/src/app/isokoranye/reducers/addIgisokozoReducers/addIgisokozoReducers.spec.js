@@ -1,5 +1,5 @@
 import addIgisokozoReducer from './addIgisokozoReducer';
-import { ADD_IGISOKOZO_REQUEST, ADD_IGISOKOZO_ERROR } from '../../../constants/constants';
+import { ADD_IGISOKOZO_REQUEST, ADD_IGISOKOZO_SUCCESS, ADD_IGISOKOZO_ERROR } from '../../../constants/constants';
 
 describe('testing addIgisokozoReducer', () => {
   it('should return the initial state', () => {
@@ -13,12 +13,12 @@ describe('testing addIgisokozoReducer', () => {
     )).toEqual({ isSaving: true, ibisokozo: [] });
   });
 
-  // it('should handle ADD_IGISOKOZO_SUCCESS', () => {
-  // expect(addIgisokozoReducer(
-  // { isSaving: false, ibisokozo: [] },
-  // { type: 'ADD_IGISOKOZO_REQUEST', payload: { isSaving: true } }
-  // )).toEqual({ isSaving: false, ibisokozo: [] });
-  // });
+  it('should handle ADD_IGISOKOZO_SUCCESS', () => {
+    expect(addIgisokozoReducer(
+      { isSaving: false, ibisokozo: [] },
+      { type: ADD_IGISOKOZO_SUCCESS, payload: { isSaving: false, lastAddedSokozo: { igisokozo: "mxxxiu", inyishu: "abahimbiri baraho" } } },
+    )).toEqual({ isSaving: false, ibisokozo: [{ _id: "012345", igisokozo: "mxxxiu", inyishu: "abahimbiri baraho" }] });
+  });
 
   it('should handle ADD_IGISOKOZO_ERROR', () => {
     expect(addIgisokozoReducer(
