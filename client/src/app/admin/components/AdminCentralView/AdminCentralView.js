@@ -5,9 +5,9 @@ import { Col } from 'react-bootstrap';
 import adminRoutes from '../../adminRoutes/adminRoutes';
 
 const AdminCentralView = () => (
-  <Col xs={9} sm={9} md={9} lg={9} className="adminCentralView">
+  <Col xs={8} sm={8} md={8} lg={8} mdOffset={1} className="adminCentralView">
     <h3>this is admin central view</h3>
-    {adminRoutes.map((route, id) => (
+    { adminRoutes.map((route, id) => (
       <Route
         // eslint-disable-next-line react/no-array-index-key
         key={id}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Nav, NavItem } from 'react-bootstrap';
+import { Col, Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 class AdminLeftSideNavigation extends Component {
@@ -29,24 +29,26 @@ class AdminLeftSideNavigation extends Component {
 
   render() {
     return (
-      <Nav
-        bsStyle="pills"
-        stacked
-        justified
-        pullLeft
-        activeKey={2}
-        onSelect={this.handleSelect.bind(this)}
-      >
-        <LinkContainer to="/admin/users">
-          <NavItem eventKey={1}>Users</NavItem>
-        </LinkContainer>
-        <LinkContainer to="/admin/ibisokozo">
-          <NavItem eventKey={2}>Ibisokozo</NavItem>
-        </LinkContainer>
-        <LinkContainer to="/admin/ibisokozo/newSokozo">
-          <NavItem eventKey={3}>Add Igisokozo</NavItem>
-        </LinkContainer>
-      </Nav>
+      <Col xs={2} sm={2} md={2} lg={2} className="adminLeftSideNavigation">
+        <Nav
+          bsStyle="pills"
+          stacked
+          justified
+          pullLeft
+          activeKey={2}
+          onSelect={this.handleSelect.bind(this)}
+        >
+          <LinkContainer to="/admin/users">
+            <NavItem eventKey={1}>Users</NavItem>
+          </LinkContainer>
+          <LinkContainer to="/admin/ibisokozo">
+            <NavItem eventKey={2}>Ibisokozo</NavItem>
+          </LinkContainer>
+          <LinkContainer to="/admin/ibisokozo/newSokozo">
+            <NavItem eventKey={3}>Add Igisokozo</NavItem>
+          </LinkContainer>
+        </Nav>
+      </Col>
     );
   }
 }

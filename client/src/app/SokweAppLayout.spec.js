@@ -1,9 +1,9 @@
 import React from 'react';
-import Enzyme, { mount } from 'enzyme';
+import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import SokweAppLayout from './SokweAppLayout';
 
-Enzyme.configure({ adapter: new Adapter() });
+configure({ adapter: new Adapter() });
 
 function setup() {
   // eslint-disable-next-line no-undef
@@ -27,5 +27,6 @@ describe('testing SokweAppLayout', () => {
     const contentDisplayAreaProps = enzymeWrapper.find('NavbarSokwe').props();
     expect(contentDisplayAreaProps.isAdmin).toBe(false);
     expect(contentDisplayAreaProps.isLoggedIn).toBe(false);
+    expect(enzymeWrapper.find('footer')).toBe(true);
   });
 });
