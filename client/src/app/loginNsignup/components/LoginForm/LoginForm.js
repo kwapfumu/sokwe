@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import { Grid, Row, Col, Form, FormGroup, Alert, FormControl, Button } from 'react-bootstrap';
-import { sendEmail, login } from '../../coolReusableFunctions/auth0/passwordless/auth0Fctr';
+// import { sendEmail, login } from '../../coolReusableFunctions/auth0/passwordless/auth0Fctr';
 import CodeForm from '../CodeForm/CodeForm';
 
 class LoginForm extends Component {
@@ -47,13 +47,13 @@ class LoginForm extends Component {
 
   handleEmailSubmit(e) {
     e.preventDefault();
-    sendEmail(this.state.loginEmail);
+    // sendEmail(this.state.loginEmail);
     this.setState({ showCodeForm: true });
   }
-
+  // eslint-disable-next-line class-methods-use-this
   handleCodeSubmit(e) {
     e.preventDefault();
-    login(this.state.loginCode);
+    // login(this.state.loginCode);
   }
 
   render() {

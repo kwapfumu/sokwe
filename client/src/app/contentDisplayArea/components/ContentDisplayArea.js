@@ -1,10 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import ErrorBoundary from '../../reusableComponents/ErrorBoundary/ErrorBoundary';
 import AnyLoggedInUserLayout from '../../anyLoggedInUser/components/AnyLoggedInUserLayout';
 import AdminLayout from '../../admin/components/AdminLayout/AdminLayout';
-// import HomeLayout from '../../home/components/HomeLayout';
-// import AboutLayout from '../../about/components/AboutLayout';
 import navbarRoutes from '../../navbar/navbarRoutes/navbarRoutes';
 import LoginContainer from '../../loginNsignup/containers/LoginContainer';
 
@@ -12,11 +11,15 @@ import LoginContainer from '../../loginNsignup/containers/LoginContainer';
 const ContentDisplayArea = (props) => {
   if (props.isLoggedIn === true && props.isAdmin === false) {
     return (
-      <AnyLoggedInUserLayout />
+      <ErrorBoundary>
+        <AnyLoggedInUserLayout />
+      </ErrorBoundary>
     );
   } else if (props.isLoggedIn === true && props.isAdmin === true) {
     return (
-      <AdminLayout />
+      <ErrorBoundary>
+        <AdminLayout />
+      </ErrorBoundary>
     );
   }
   return (

@@ -1,6 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types'; ResponsiveEmbed
-// import { Grid } from 'react-bootstrap';
 import shortDemo from '../../../assets/videos/MissClowd.mp4';
 import { demoVid } from '../scss/home.scss';
 // renders background vid of the game being played...
@@ -15,5 +13,4 @@ const HomeLayout = () => {
   );
 };
 
-// HomeLayout.propTypes = {};
 export default HomeLayout;
