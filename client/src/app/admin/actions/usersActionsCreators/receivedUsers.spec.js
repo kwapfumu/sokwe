@@ -7,7 +7,7 @@ describe('test receivedUsers action creator', () => {
       type: FETCH_USERS_SUCCESS,
       payload: {
         isFetching: false,
-        ibisokozo: [
+        users: [
           {
             email: "wtv@pff.com",
             username: "wtv",

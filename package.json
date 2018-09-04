@@ -22,9 +22,12 @@
       "!**/node_modules/**",
       "!**/vendor/**"
     ],
+    "setupTestFrameworkScriptFile": "<rootDir>/setupEnzyme.js",
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",
-      "<rootDir>/cypress/"
+      "<rootDir>/cypress/",
+      "<rootDir>/setupEnzyme.js",
+      "<rootDir>/server/"
     ],
     "transform": {
       ".* ": "<rootDir>/node_modules/babel-jest"

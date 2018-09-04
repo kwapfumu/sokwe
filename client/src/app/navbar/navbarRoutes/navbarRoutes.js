@@ -1,6 +1,7 @@
 import HomeLayout from '../../home/components/HomeLayout';
 import AboutLayout from '../../about/components/AboutLayout';
-import IsokoranyeLayout from '../../isokoranyeHome/components/IsokoranyeLayoutt/IsokoranyeLayout';
+// eslint-disable-next-line max-len
+// import IsokoranyeLayout from '../../isokoranyeHome/components/IsokoranyeLayoutt/IsokoranyeLayout';
 
 const navbarRoutes = [
   {
@@ -21,12 +22,12 @@ const navbarRoutes = [
     exact: true,
     main: HomeLayout,
   },
-  {
-    id: "third",
-    path: "/isokoranye",
-    exact: true,
-    main: IsokoranyeLayout,
-  },
+  // {
+  //  id: "third",
+  //  path: "/isokoranye",
+  //  exact: true,
+  //  main: IsokoranyeLayout,
+  // },
   // {
   //  id: "notFound",
   //  main: UrlNotFound,
