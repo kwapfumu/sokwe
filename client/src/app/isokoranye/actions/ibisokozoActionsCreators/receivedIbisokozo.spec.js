@@ -2,17 +2,15 @@ import { FETCH_IBISOKOZO_SUCCESS } from '../../../constants/constants';
 import receivedIbisokozo from './receivedIbisokozo';
 
 describe('test receivedIbisokozo action creator', () => {
-  it('should create an action to acknowledge that Ibisokozo was received', () => {
+  it('creates an action to acknowledge that Ibisokozo was received', () => {
     const expectedAction = {
       type: FETCH_IBISOKOZO_SUCCESS,
       payload: {
         isFetching: false,
-        // eslint-disable-next-line no-undef
-        ibisokozo: json.data.children.map((child) => child.data),
-        // receivedAt: Date.now(),
+        ibisokozo: [{ igisokozo: "mxxxxiu", inyishu: "grrrr" }, { igisokozo: "abcd", inyishu: "1234" }],
       },
     };
     // eslint-disable-next-line no-undef
-    expect(receivedIbisokozo(json)).toEqual(expectedAction);
+    expect(receivedIbisokozo([{ igisokozo: "mxxxxiu", inyishu: "grrrr" }, { igisokozo: "abcd", inyishu: "1234" }])).toEqual(expectedAction);
   });
 });
