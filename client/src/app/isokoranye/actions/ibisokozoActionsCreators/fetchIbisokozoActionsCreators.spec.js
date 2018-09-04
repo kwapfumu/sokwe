@@ -31,7 +31,10 @@ describe('test fetchIbisokozo async action Creators', () => {
       },
     ];
 
-    const store = mockStore({ ibisokozo: [] });
+    const store = mockStore({
+      isFetching: false,
+      ibisokozo: [],
+    });
 
     return store.dispatch(fetchIbisokozo()).then(() => {
       // return of async actions
