@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Col, ListGroup, ListGroupItem, ButtonToolbar, Button, Glyphicon } from 'react-bootstrap';
-import adminDeleteUserActionsCreators from '../../actions/userActionsCreators/adminDeleteUserActionsCreators';
+import deleteUser from '../../actions/userActionsCreators/adminDeleteUserActionsCreators';
 import fetchUsers from '../../actions/usersActionsCreators/fetchUsersActionsCreators';
 
 class UsersList extends Component {
@@ -26,7 +26,7 @@ class UsersList extends Component {
               bsStyle="danger"
               bsSize="small"
               // eslint-disable-next-line no-underscore-dangle
-              onClick={this.props.dispatch(adminDeleteUserActionsCreators.deleteUser(aUser._id))}
+              onClick={this.props.dispatch(deleteUser(aUser._id))}
             >
               <Glyphicon glyph="trash" />
             </Button>

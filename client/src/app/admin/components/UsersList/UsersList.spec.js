@@ -38,8 +38,12 @@ function setup() {
 describe('testing UsersList', () => {
   it('should render list of users', () => {
     const { enzymeWrapper } = setup();
-    expect(enzymeWrapper.find('#usersListView')).toBeDefined();
-    expect(enzymeWrapper.find('ListGroup').contains('ListGroupItem')).toBe(true);
+    expect(enzymeWrapper.find('#usersListView')).to.have.lengthOf(1);
+    expect(enzymeWrapper.find('ListGroup')).to.have.lengthOf(1);
+    const listOfUsers = enzymeWrapper.find('ListGroup');
+    listOfUsers.forEach((node) => {
+      expect(node.hasClass('list-group-item')).to.equal(true);
+    });
   });
 
   // it('should call componentDidMount', () => {});
