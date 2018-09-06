@@ -2,7 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
 import deleteUser from './adminDeleteUserActionsCreators';
-import { DELETE_USERS_REQUEST, DELETE_USER_SUCCESS } from '../../../constants/constants';
+import { DELETE_USER_REQUEST, DELETE_USER_SUCCESS } from '../../../constants/constants';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -13,12 +13,12 @@ describe('test deleteUser async action Creators', () => {
     fetchMock.restore();
   });
 
-  it('creates DELETE_USER_SUCCESS when deletinga user has been done', () => {
+  it('creates DELETE_USER_SUCCESS when deleting a user has been done', () => {
     fetchMock.getOnce('/admin/users/:125/deleteUser', { body: { _id: "125" } }, { headers: { 'Content-Type': 'application/json' } });
 
     const expectedActions = [
       {
-        type: DELETE_USERS_REQUEST,
+        type: DELETE_USER_REQUEST,
         payload: {
           aUserId2Delete: "125",
           isSaving: true,

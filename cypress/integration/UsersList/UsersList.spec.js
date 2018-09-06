@@ -5,5 +5,8 @@ describe('Testing NavbarSokwe', () => {
   });
 
   // rpt admin tests
-  it('loads a list of users', () => {});
+  it('loads a list of users', () => {
+    // eslint-disable-next-line no-undef
+    cy.contains('ListGroupItem').should('be.visible');
+  });
 });

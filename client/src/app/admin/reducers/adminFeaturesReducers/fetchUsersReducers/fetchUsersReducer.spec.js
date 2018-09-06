@@ -61,7 +61,7 @@ describe('testing fetchUsersReducer', () => {
     });
   });
 
-  it('should handle ADD_IGISOKOZO_ERROR', () => {
+  it('should handle FETCH_USERS_ERROR', () => {
     expect(fetchUsersReducer(
       { isFetching: false, users: [] },
       { type: FETCH_USERS_ERROR, payload: { isFetching: false } },

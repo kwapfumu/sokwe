@@ -11,6 +11,7 @@
     "start": "webpack --env production --progress --colors --watch && nodemon --watch webpack.config.js --exec babel-node -- server/server",
     "client": "webpack-dev-server --env development --progress --colors --watch",
     "server": "nodemon --watch server/server.js --exec babel-node -- server/server",
+    "test": "jest --coverage",
     "testUnit": "jest --coverage --watch",
     "build": "webpack --env production --progress --profile --colors",
     "testE2e": "cypress open"
@@ -22,16 +23,13 @@
       "!**/node_modules/**",
       "!**/vendor/**"
     ],
-    "setupTestFrameworkScriptFile": "<rootDir>/setupEnzyme.js",
+    "setupTestFrameworkScriptFile": "<rootDir>/__tests__/setup/setupEnzyme.js",
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",
       "<rootDir>/cypress/",
-      "<rootDir>/setupEnzyme.js",
+      "<rootDir>/__tests__/setup/setupEnzyme.js",
       "<rootDir>/server/"
     ],
-    "transform": {
-      ".* ": "<rootDir>/node_modules/babel-jest"
-    },
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/react-dom",
