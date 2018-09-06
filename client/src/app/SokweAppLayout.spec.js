@@ -1,32 +1,21 @@
 import React from 'react';
-import { configure, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { mount } from 'enzyme';
 import SokweAppLayout from './SokweAppLayout';
-
-configure({ adapter: new Adapter() });
-
-function setup() {
-  // eslint-disable-next-line no-undef
-  const enzymeWrapper = mount(<SokweAppLayout {...props} />);
-
-  return {
-    // eslint-disable-next-line no-undef
-    props: props,
-    enzymeWrapper: enzymeWrapper,
-  };
-}
+import NavbarSokwe from './navbar/components/NavbarSokwe';
+import ContentDisplayArea from './contentDisplayArea/components/ContentDisplayArea';
 
 describe('testing SokweAppLayout', () => {
   it('should render self and subcomponents', () => {
-    const { enzymeWrapper } = setup();
-    expect(enzymeWrapper.find('div').hasClass('sokweAppContainer')).toBe(true);
-    const navbarSokweProps = enzymeWrapper.find('NavbarSokwe').props();
+    const enzymeWrapper = mount(<SokweAppLayout />);
+    expect(enzymeWrapper.find('div').hasClass('sokweAppContainer')).toEqual(true);
+    const navbarSokweProps = enzymeWrapper.find(NavbarSokwe).props();
     expect(navbarSokweProps.isAdmin).toBe(false);
     expect(navbarSokweProps.isLoggedIn).toBe(false);
     expect(navbarSokweProps.showAdminNavbarFeatures).toBe(false);
-    const contentDisplayAreaProps = enzymeWrapper.find('NavbarSokwe').props();
+    const contentDisplayAreaProps = enzymeWrapper.find(ContentDisplayArea).props();
     expect(contentDisplayAreaProps.isAdmin).toBe(false);
     expect(contentDisplayAreaProps.isLoggedIn).toBe(false);
     expect(enzymeWrapper.find('footer')).toBe(true);
+    enzymeWrapper.unmount();
   });
 });

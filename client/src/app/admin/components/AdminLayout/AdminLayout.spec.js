@@ -1,27 +1,13 @@
 import React from 'react';
-import { configure, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import AdminLayout from './AdminLayout';
-
-configure({ adapter: new Adapter() });
-
-function setup() {
-  // eslint-disable-next-line no-undef
-  const enzymeWrapper = mount(<AdminLayout {...props} />);
-
-  return {
-    // eslint-disable-next-line no-undef
-    props: props,
-    enzymeWrapper: enzymeWrapper,
-  };
-}
+import AdminLeftSideNavigation from '../AdminLeftSideNavigation/AdminLeftSideNavigation';
+import AdminCentralView from '../AdminCentralView/AdminCentralView';
 
 describe('testing AdminLayout', () => {
   it('should render self and subcomponents AdminLeftSideNavigation & AdminCentralView', () => {
-    const { enzymeWrapper } = setup();
-    const AdminLeftSideNavigation = enzymeWrapper.find('AdminLeftSideNavigation');
-    expect(AdminLeftSideNavigation).toBe(true);
-    const AdminCentralView = enzymeWrapper.find('AdminCentralView');
-    expect(AdminCentralView).toBe(true);
+    const enzymeWrapper = shallow(<AdminLayout />);
+    // eslint-disable-next-line max-len,react/jsx-key
+    expect(enzymeWrapper.contains([<AdminLeftSideNavigation />, <AdminCentralView />])).toEqual(true);
   });
 });

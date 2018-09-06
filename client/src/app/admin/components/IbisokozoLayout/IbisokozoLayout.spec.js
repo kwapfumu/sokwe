@@ -1,35 +1,34 @@
 import React from 'react';
-import { configure, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { mount } from 'enzyme';
 import IbisokozoLayout from './IbisokozoLayout';
 
-configure({ adapter: new Adapter() });
+const props = {
+  // TODO: add some sokozo if i need to test more
+  ibisokozo: [],
+  dispatch: jest.fn(),
+  getState: jest.fn(),
+  history: {},
+};
 
-function setup() {
-  const props = {
-    // TODO: add some sokozo if i need to test more
-    ibisokozo: [],
-    dispatch: jest.fn(),
-  };
-
-  const enzymeWrapper = mount(<IbisokozoLayout {...props} />);
-
-  return {
-    props: props,
-    enzymeWrapper: enzymeWrapper,
-  };
-}
-
-describe('testing UsersList', () => {
+describe('testing IbisokozoLayout', () => {
   it('should render list of ibisokozo', () => {
-    const { enzymeWrapper } = setup();
-    expect(enzymeWrapper.find('h2').text()).to.equal('This is Ibisoko layout');
-    expect(enzymeWrapper.find('ListGroup')).to.have.lengthOf(1);
+    const enzymeWrapper = mount(<IbisokozoLayout {...props} />);
+    expect(enzymeWrapper.find('h2').text()).toEqual('This is Ibisoko layout');
+    expect(enzymeWrapper.find('ListGroup').length).toBe(1);
     const listOfIbisokozo = enzymeWrapper.find('ListGroup');
     listOfIbisokozo.forEach((node) => {
-      expect(node.exists('#collapsible-panel-AdminIgisokozoPanel')).to.equal(true);
+      expect(node.exists('#collapsible-panel-AdminIgisokozoPanel')).toEqual(true);
     });
+    enzymeWrapper.unmount();
   });
 
-  // it('should call componentDidMount', () => {});
+  it('calls componentDidMount', () => {
+    const spy = jest.spyOn(IbisokozoLayout.prototype, 'componentDidMount');
+    // eslint-disable-next-line no-unused-vars
+    const enzymeWrapper = mount(<IbisokozoLayout {...props} />);
+    // enzymeWrapper.instance().methodName();
+    expect(spy).toHaveBeenCalled();
+    spy.mockClear();
+    enzymeWrapper.unmount();
+  });
 });
