@@ -7,6 +7,6 @@ describe('Testing HomeLayout', () => {
 
   it('should load a video background', () => {
     // eslint-disable-next-line no-undef
-    cy.get('#background-video > source').should('be.visible');
+    cy.get('video[id=background-video]').should('be.visible');
   });
 });
