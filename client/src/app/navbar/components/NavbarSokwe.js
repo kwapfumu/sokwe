@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Navbar } from 'react-bootstrap';
 import { IndexLinkContainer } from 'react-router-bootstrap';
+// import ErrorBoundary from '../../reusableComponents/ErrorBoundary/ErrorBoundary';
 import NavbarFeatures2Render from './NavbarFeatures2Render';
 // import auth0Fctr from '../../coolReusableFunctions/auth0/auth0Fctr';
 
@@ -58,6 +59,7 @@ class NavbarSokwe extends Component {
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse onSelect={this.handleSelect.bind(this)}>
+          {/* <ErrorBoundary> */}
           <NavbarFeatures2Render
             isAdmin={this.props.isAdmin}
             isLoggedIn={this.props.isLoggedIn}
@@ -65,6 +67,7 @@ class NavbarSokwe extends Component {
             showAdminFeatures={this.props.showAdminFeatures}
             selectedKey={this.state.selectedKey}
           />
+          {/* </ErrorBoundary> */}
         </Navbar.Collapse>
       </Navbar>
     );

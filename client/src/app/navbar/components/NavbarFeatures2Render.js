@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import ErrorBoundary from '../../reusableComponents/ErrorBoundary/ErrorBoundary';
 import AnyLoggedInUserNavbarFeatures from './AnyLoggedInUserNavbarFeatures';
 import HomeNavbarFeatures from './HomeNavbarFeatures';
 
@@ -7,17 +8,21 @@ const NavbarFeatures2Render = (props) => {
   if (props.isLoggedIn === true) {
     // when loggedIn
     return (
+      // <ErrorBoundary>
       <AnyLoggedInUserNavbarFeatures
         isAdmin={props.isAdmin}
         showAdminFeatures={props.showAdminFeatures}
         currentUserName={props.getState().currentUser.username}
         selectedKey={props.selectedKey}
       />
+      // </ErrorBoundary>
     );
   }
   // when no one is loggedIn
   return (
+    // <ErrorBoundary>
     <HomeNavbarFeatures selectedKey={props.selectedKey} />
+    // </ErrorBoundary>
   );
 };
 

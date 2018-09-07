@@ -11,7 +11,7 @@ const SomethingWrong = (props) => (
 );
 
 SomethingWrong.propTypes = {
-  error: PropTypes.string.isRequired,
+  error: PropTypes.object.isRequired,
   errorInfo: PropTypes.object.isRequired,
 };
 export default SomethingWrong;

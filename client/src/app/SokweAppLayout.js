@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
-import ErrorBoundary from './reusableComponents/ErrorBoundary/ErrorBoundary';
+// import ErrorBoundary from './reusableComponents/ErrorBoundary/ErrorBoundary';
 import NavbarSokwe from './navbar/components/NavbarSokwe';
 import ContentDisplayArea from './contentDisplayArea/components/ContentDisplayArea';
 import FooterSokwe from './footer/components/FooterSokwe';
@@ -28,24 +28,24 @@ class SokweAppLayout extends Component {
   render() {
     return (
       <div className="sokweAppContainer">
-        <ErrorBoundary>
-          <NavbarSokwe
-            isAdmin={this.state.isAdmin}
-            isLoggedIn={this.state.isLoggedIn}
-            showAdminFeatures={this.state.showAdminNavbarFeatures}
-          />
-        </ErrorBoundary>
-        <ErrorBoundary>
-          <ContentDisplayArea
-            isAdmin={this.state.isAdmin}
-            isLoggedIn={this.state.isLoggedIn}
-            setIsLoggedInTrue={this.setIsLoggedInTrue.bind(this)}
-            setIsAdminTrue={this.setIsAdminTrue.bind(this)}
-          />
-        </ErrorBoundary>
-        <ErrorBoundary>
-          <FooterSokwe />
-        </ErrorBoundary>
+        {/* <ErrorBoundary> */}
+        <NavbarSokwe
+          isAdmin={this.state.isAdmin}
+          isLoggedIn={this.state.isLoggedIn}
+          showAdminFeatures={this.state.showAdminNavbarFeatures}
+        />
+        {/* </ErrorBoundary> */}
+        {/* <ErrorBoundary> */}
+        <ContentDisplayArea
+          isAdmin={this.state.isAdmin}
+          isLoggedIn={this.state.isLoggedIn}
+          setIsLoggedInTrue={this.setIsLoggedInTrue.bind(this)}
+          setIsAdminTrue={this.setIsAdminTrue.bind(this)}
+        />
+        {/* </ErrorBoundary> */}
+        {/* <ErrorBoundary> */}
+        <FooterSokwe />
+        {/* </ErrorBoundary> */}
       </div>
     );
   }
